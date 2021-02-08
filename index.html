@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+    </style>
+    <meta name="author" content="Konstantin Stepanyan" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="headline">
+            <span class="headline__item city">Санкт-Петербург</span>
+            <span class="headline__item number">+7(812)613-58-38</span>
+            <span href="#" class="headline__item time">Пн-пт 10:00-19:00, сб-вс 10:00-17:00 </span>
+            <a href="#" class="headline__item link_bl send">Напишите нам</a>
+            <a href="#" class="headline__item link_bl contact">Свяжитесь с директором</a>
+            <div class="icons">
+                <img class="headline__item link" src="img/header/telegram-icon.svg" alt="telegram">
+                <img class="headline__item link" src="img/header/skype-icon.svg" alt="skype">
+                <img class="headline__item link" src="img/header/phone-icon.svg" alt="phone">
+            </div>
+        </div>
+
+        <nav class="nav">
+            <div class="logo-wrapper">
+                <img src="img/header/logo.svg" alt="logo" class="logo">
+                <span class="logo-wrapper__description">Ваш эксперт <br> на рынке <span class="color_red">3D</span>-техники</span>
+            </div>
+            <a class="raiting" href="#">
+                <img src="img/header/raiting.jpg" alt="yandex-raiting" class="raiting__img">
+            </a>
+            <div class="search">
+                <input type="text" class="search__request-text" placeholder="Введите запрос, например, Formlabs Form 2">
+                <input type="submit" value="Найти" class="search__btn-find">
+            </div>
+
+            <button class="btn btn-login"><img src="img/header/login-img.svg" alt="logo">Войти</button>
+            <button class="btn btn-basket"><img src="img/header/basket.svg" alt="basket">Корзина пуста</button>
+        </nav>
+
+        <div class="offers">
+            <div class="services">
+                <span class="services__item akcii">Акции</span>
+                <span class="services__item about">О нас</span>
+                <span class="services__item events">Мероприятия</span>
+                <span class="services__item payment">Оплата и доставка</span>
+                <span class="services__item my-order">Что с моим заказом?</span>
+                <span class="services__item akupki">Гос. закупки</span>
+                <span class="services__item log">Блог</span>
+                <span class="services__item master-klassi">Мастер-классы</span>
+                <span class="services__item orders">Контакты</span>
+            </div>
+            <hr class="hr" color="#BDBDBD">
+            <div class="goods">
+                <span class="goods__item font_bold">3D-принтеры</span>
+                <span class="goods__item font_bold">3D-сканеры</span>
+                <span class="goods__item font_bold">Станки</span>
+                <span class="goods__item font_bold">Роботы</span>
+                <span class="goods__item font_bold">Образование</span>
+                <span class="goods__item font_bold">Стоматологам</span>
+                <span class="goods__item font_bold">Гаджеты</span>
+                <span class="goods__item font_bold">Материалы</span>
+                <span class="goods__item font_bold">ПО</span>
+                <span class="goods__item font_bold">Решения</span>
+                <span class="goods__item font_bold">Учебный центр</span>
+                <span class="goods__item font_bold">Услуги</span>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="top-3d-shop">
+
+        <img src="img/top-3d-shop/people.jpg" alt="people" class="top-3d-shop__img">
+
+        <div class="top-3d-shop__description" style="
+    width: 100%;
+    grid-area: description;
+    display: grid;
+    grid-template-columns: 2fr 1fr 4fr;
+    grid-template-areas:
+        &quot;header . about&quot;
+        &quot;btn . about&quot;
+        &quot;btn-desc . .&quot;;
+">
+
+            <h3 class="top-3d-shop__header" style="
+    grid-area: header;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 32px;
+margin: 0">Твоя работа <br>
+                в крупнейшем интеграторе <br>
+                цифрового производства
+            </h3>
+
+            <p class="top-3d-shop__about" style="
+    grid-area: about;
+    justify-self: end;
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 19px;
+    letter-spacing: -0.7px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+">
+                Top 3D Shop – лидер по продажам 3D-оборудования в России и странах СНГ. В 2018 мы стали <br>
+                лучшим интегратором 3D оборудования по аддитивным технологиям и цифровому <br>
+                производству по версии 3D Print Awards. <br> <br>
+
+                За 6 лет работы более 10 000 клиентов по всей России и СНГ выбрали Top 3D Shop. В 2018 <br>
+                наш оборот составил 600 млн. рублей, в компании работает более 100 сотрудников. <br> <br>
+
+                Новая цель: 1 млрд торгового оборота в этом году и выход на международные рынки. Если вы <br>
+                — целеустремленный специалист, готовый учиться новым навыкам и учить других, мыслите <br>
+                не просто как исполнитель, а как владелец своего направления, то нам по пути!
+            </p>
+
+            <button class="btn btn-send-resume" style="
+    grid-area: btn;
+    width: 275px;
+    height: 40px;
+    align-self: end;
+    margin: 31px 0px 4px 0px;
+">Отправить резюме</button>
+
+            <span class="btn-description" style="
+    margin: 13px 0 0 0;
+    grid-area: btn-desc;
+    font-family: SF Pro Text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: justify;
+    letter-spacing: -0.7px;
+    color: #4D4D4D;
+    opacity: .5;
+">Нажимая кнопку, вы соглашаетесь <br>
+                на обработку персональных данных.</span>
+
+        </div>
+    </section>
+
+    <section class="better-to-see">
+        <h2 class="better-to-see__header">Лучше один раз увидеть:</h2>
+        <hr class="better-to-see__hr" color="grey">
+
+        <div class="better-to-see__links">
+            <a href="#" class="better-to-see__link">Как устроена наша компания изнутри</a>
+            <a href="#" class="better-to-see__link">Как создавалась компания - необычная история</a>
+            <a href="#" class="better-to-see__link" style="
+    margin-right: 20px;
+">
+                Читай о нас на 3D Today
+            </a>
+        </div>
+    </section>
+
+
+    <section class="videos-about-us">
+        <div class="videos-about-us__wrapper">
+            <h2 class="videos-about-us__header">Видео о нас</h2>
+
+            <div class="slider__arrows-wrapper">
+                <img class="slider__arrow arrow-left" src="img/videos-about-us/arrow.svg" alt="left">
+                <img class="slider__arrow arrow-right" src="img/videos-about-us/arrow.svg" alt="right">
+            </div>
+            
+            <iframe 
+            class="video first-video"    
+            src="https://www.youtube.com/embed/OYFOWAL1NlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <iframe 
+            class="video second-video"    
+            src="https://www.youtube.com/embed/SOYBsly_yN8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+</body>
+
+</html>
