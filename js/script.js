@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const checkClientWidth = () => {
                 
-                if (window.innerWidth <= 1100) {
+                if (window.innerWidth <= 900) {
                     this.nav.style.height = 0;
                     this.nav.style.margin = 0;
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.nav.classList.remove("menu_show");
                     this.ham.classList.remove("burger_close");
                     
-                    document.querySelector('.header').style.height = '160px'; //160 - default value from css
+                    document.querySelector('.header').style.height = '200px'; //200 - default value from css
                     
                     
                 } else {
@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!this.isChanging) {
                 
                 if (!this.ham.classList.contains("burger_close")) {
-
-                    this.header.style.height = '70vh';
+                    this.nav.height=0;
+                    this.header.style.height = '400px';
                 } else {
                     console.log(this.headerH);
                     this.header.style.height = `${this.headerH}px`;
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const burger1 = new Burger({
-        navSelector: '.offers__wrapper',
+        navSelector: '.offers__list',
         hamSelector: '.burger'
     })
 });

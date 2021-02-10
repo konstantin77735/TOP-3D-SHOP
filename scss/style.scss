@@ -1,3 +1,7 @@
+@import "header";
+@import "top-3d-shop";
+@import "better-to-see";
+
 html,
 body {
     margin: 0;
@@ -5,471 +9,6 @@ body {
     font-size: 10px;
 }
 
-$headerMarginLeftRight: minmax(40px, 100px);
-
-.header {
-    box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.16);
-    height: 239px;
-    width: 96%;
-    margin: 10px auto 0;
-
-    .headline {
-        background: #FED600;
-        height: 35px;
-        font-size: 1.3rem;
-
-
-        .headline__wrapper {
-            width: 90%;
-            margin: 0 auto;
-            height: 35px;
-            display: grid;
-            justify-items: center;
-            align-items: center;
-            grid-template-areas: "city number time . send contact icons";
-            grid-template-columns: minmax(40px, 118px) minmax(40px, 107px) minmax(140px, 231px) minmax(40px, 252px) minmax(40px, 103px) minmax(82px, 190px);
-            /*grid-template-columns: 8% 8% 9% 17% 20% 8% 15% 8% 7%;*/
-            font-family: Open Sans;
-            font-style: normal;
-            font-weight: 600;
-        }
-
-        .city {
-            grid-area: city;
-        }
-
-        .number {
-            grid-area: number;
-        }
-
-        .time {
-            grid-area: time;
-        }
-
-        .send {
-            grid-area: send;
-        }
-
-        .contact {
-            grid-area: contact;
-        }
-
-        .icons {
-            grid-area: icons;
-            display: flex;
-            justify-content: space-between;
-            width: 83px;
-        }
-
-        .link_bl {
-            display: inline-block;
-            color: #000;
-            text-decoration: none;
-
-            &::after {
-                content: '';
-                display: block;
-                width: 0;
-                height: 2px;
-                background: #000;
-                transition: width .3s;
-            }
-
-            &:hover::after {
-                width: 100%;
-                //transition: width .3s;
-            }
-
-        }
-
-    }
-
-    .nav {
-        font-family: Open Sans;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 1.3rem;
-        line-height: 18px;
-
-
-        &__wrapper {
-            display: grid;
-            grid-template-areas: 'logo raiting search . login . basket';
-            grid-template-rows: 99px;
-            /* grid-template-columns: 8% 15% 11% 38% 1% 5% 2% 11%; */
-            grid-template-columns: minmax(80px, 188px) minmax(80px, 150px) minmax(80px, 485px) minmax(10px, 30px) minmax(10px, 79px) minmax(10px, 30px) minmax(10px, 160px);
-            -webkit-box-align: center;
-            -webkit-align-items: center;
-            -ms-flex-align: center;
-            align-items: center;
-            text-align: center;
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .logo-wrapper {
-            grid-area: logo;
-
-            display: grid;
-            width: 63px;
-            grid-template-columns: minmax(74px, 84px) minmax(123px, 158px);
-            font-family: Open Sans;
-            font-style: italic;
-            font-weight: normal;
-            align-items: center;
-            text-align: left;
-            line-height: 1.8rem;
-
-            &__desctiption {
-                grid-area: description;
-            }
-        }
-
-        .raiting {
-            grid-area: raiting;
-
-            &__img {
-
-                justify-self: center;
-                height: 48px;
-                width: 100px;
-                border: 1px solid #fff;
-                box-shadow: 0px 4px 16px rgba(0, 0, 0, .5);
-                border-radius: 11px;
-                padding: 4px;
-            }
-        }
-
-        .search {
-            grid-area: search;
-            align-self: center;
-            display: grid;
-            grid-template-rows: 4px;
-            justify-items: end;
-
-            &__request-text {
-                width: 100%;
-                height: 44px;
-                left: 550px;
-                top: 74px;
-                padding-left: 10px;
-
-                /* white */
-                background: #FFFFFF;
-                /* ghost */
-                border: 1px solid #BDBDBD;
-                box-sizing: border-box;
-                border-radius: 4px;
-
-            }
-
-            &__btn-find {
-                margin-right: 4px;
-                width: 75px;
-                height: 36px;
-                left: 967px;
-                top: 78px;
-                border: 2px solid #D2001C;
-                color: #d2001c;
-                background: #fff;
-                box-sizing: border-box;
-                border-radius: 4px;
-                font-family: Open Sans;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 18px;
-                text-align: center;
-                transition: all .3s linear;
-
-                &:hover {
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-                    color: #800;
-                    border: 2px solid #800;
-                    cursor: pointer;
-                }
-            }
-        }
-
-        .btn-login {
-            grid-area: login;
-
-            height: 40%;
-            background: none;
-            border: none;
-            color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0;
-        }
-
-        .btn-basket {
-            grid-area: basket;
-            height: 40%;
-            max-width: 160px;
-            padding: 0 17px 1px 5px;
-            border: none;
-            background: #D2001C;
-            color: #fff;
-            -webkit-border-radius: 4px;
-            border-radius: 4px;
-            display: flex;
-            -webkit-box-pack: center;
-            -webkit-align-items: center;
-            -ms-flex-align: center;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-
-
-
-        .akcii {
-            grid-area: akcii;
-        }
-
-        .about {
-            grid-area: about;
-        }
-
-        .events {
-            grid-area: events;
-        }
-
-        .payment {
-            grid-area: payment;
-        }
-
-        .my-order {
-            grid-area: my-order;
-        }
-
-        .zakupki {
-            grid-area: zakupki;
-        }
-
-        .master-klassi {
-            grid-area: master-klassi;
-        }
-
-        .orders {
-            grid-area: orders;
-        }
-    }
-
-    .offers {
-
-        font-family: Open Sans;
-        font-size: 1.3rem;
-        line-height: 1.8rem;
-        font-style: normal;
-
-        &__wrapper {
-            display: grid;
-            grid-template-areas:
-                "services"
-                "hr"
-                "goods";
-            /* grid-template-columns: 8% 83% 9%; */
-            grid-template-columns: minmax(10px, 1122px);
-            grid-template-rows: 52px 1px 52px;
-            width: 90%;
-            margin: auto;
-        }
-
-        .services {
-            grid-area: services;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: normal;
-
-            &__item {
-                cursor: pointer;
-            }
-        }
-
-        .hr {
-            grid-area: hr;
-            margin: 0;
-            padding: 0;
-        }
-
-        .goods {
-            grid-area: goods;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-weight: bold;
-
-            &__item {
-                display: block;
-                position: relative;
-                cursor: pointer;
-
-                /*     &::after {
-                    position: absolute;
-                    content: '';
-                    bottom: 2px;
-                    right: -17px;
-                    height: 12px;
-                    width: 12px;
-                    background: url(../img/header/arrow.svg) center no-repeat;
-                    cursor: pointer;
-                } */
-            }
-
-            &__img {
-                margin-left: 5px;
-            }
-        }
-    }
-
-
-}
-
-.top-3d-shop {
-    width: 90%;
-    margin: 50px auto;
-    display: grid;
-    justify-items: center;
-    grid-template-areas:
-        "people"
-        "description";
-    grid-row-gap: 34px;
-
-    &__img {
-        grid-area: people;
-        width: 100%;
-    }
-
-    &__description {
-
-        width: 100%;
-        grid-area: description;
-        display: grid;
-        grid-template-columns: 2fr 1fr 4fr;
-        grid-template-areas:
-            'header . about'
-            'btn . about'
-            'btn-desc . .';
-    }
-
-    &__header {
-        grid-area: header;
-        font-family: SF Pro Display;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 2.7rem;
-        line-height: 3.2rem;
-        margin: 0
-    }
-
-    &__about {
-        grid-area: about;
-        justify-self: end;
-        font-family: SF Pro Text;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.5rem;
-        text-align: justify;
-        line-height: 1.9rem;
-        letter-spacing: -0.7px;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .btn-send-resume {
-        grid-area: btn;
-        width: 275px;
-        height: 40px;
-        align-self: end;
-        margin: 31px 0px 4px 0px;
-    }
-
-    .btn-description {
-        margin: 13px 0 0 0;
-        grid-area: btn-desc;
-        font-family: SF Pro Text;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.5rem;
-        line-height: 1.9rem;
-        text-align: justify;
-        letter-spacing: -0.7px;
-        color: #4D4D4D;
-        opacity: .5;
-    }
-}
-
-.better-to-see {
-    width: 90%;
-    margin: 50px auto;
-    display: grid;
-    grid-template-areas:
-        'header hr hr'
-        'links links links';
-    grid-template-columns: 1.5fr 2fr 2fr;
-    grid-row-gap: 20px;
-
-    &__header {
-        grid-area: header;
-        font-family: SF Pro Text;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 2.8rem;
-        line-height: 2.9rem;
-        /* identical to box height */
-        display: flex;
-        align-items: center;
-        letter-spacing: -0.7px;
-        /* margin: 0 18px 0 0px; */
-    }
-
-    &__hr {
-        grid-area: hr;
-        margin: 0;
-        height: 0px;
-        align-self: center;
-    }
-
-    &__links {
-
-        grid-area: links;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__link {
-        position: relative;
-        font-family: SF Pro Display;
-        color: #4D4D4D;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.6rem;
-        line-height: 1.9rem;
-        transition: all .3s linear;
-
-        &:hover {
-            color: #D2001C;
-        }
-
-        &::after {
-            position: absolute;
-            content: '';
-            bottom: 2px;
-            right: -21px;
-            height: 12px;
-            width: 12px;
-            transform: rotateZ(990deg);
-            background: url(../img/header/arrow.svg) center no-repeat;
-            cursor: pointer;
-        }
-    }
-}
 
 .videos-about-us {
     width: 96%;
@@ -563,92 +102,14 @@ $headerMarginLeftRight: minmax(40px, 100px);
     cursor: pointer;
 }
 
-@media (max-width: 1100px) {
-    $headerMarginLeftRight: minmax(5px, 30px);
+
+
+
+@media (max-width: 1000px) {
 
     html,
     body {
         font-size: 8px;
-    }
-
-    .header {
-        height: 160px;
-        transition: height .4s linear;
-        .headline {
-            grid-template-areas: ". city number time send contact icons .";
-            grid-template-columns: $headerMarginLeftRight minmax(49px, 134px) minmax(53px, 125px) minmax(140px, 279px) minmax(40px, 205px) minmax(102px, 174px) minmax(36px, 119px) $headerMarginLeftRight;
-        }
-
-        .nav {
-            .logo-wrapper {
-                grid-template-rows: 80px;
-                grid-template-columns: minmax(60px, 84px) minmax(123px, 158px);
-
-                .logo {
-                    max-width: 45px;
-                }
-            }
-
-            &__wrapper {
-                grid-template-rows: 80px;
-
-                .raiting {
-                    &__img {
-                        margin-top: 8px;
-                    }
-                }
-
-                .search {
-
-                    &__request-text,
-                    &__btn-find {
-                        font-size: 1.2rem;
-                    }
-                }
-
-
-
-                .btn {
-                    font-size: 1.2rem;
-                    justify-content: space-around;
-                }
-
-            }
-        }
-
-        .offers {
-
-            &__wrapper {
-                display: none;
-                grid-template-areas: "services goods";
-                grid-template-rows: 260px;
-                grid-template-columns: 150px 150px;
-                height: 50vh;
-
-                .hr {
-                    display: none;
-                }
-
-                .services {
-                    flex-direction: column;
-                }
-
-                .goods {
-                    flex-direction: column;
-
-                    &__img {
-                        margin-left: 0px;
-                        transform: rotateZ(-90deg);
-                    }
-                }
-            }
-        }
-    }
-
-    .better-to-see {
-        &__header {
-            font-size: 2.5rem;
-        }
     }
 
     .videos-about-us {
@@ -656,7 +117,10 @@ $headerMarginLeftRight: minmax(40px, 100px);
             font-size: 2.8rem;
         }
     }
+
 }
+
+
 
 .burger {
     display: none;
@@ -667,8 +131,8 @@ $headerMarginLeftRight: minmax(40px, 100px);
     width: 45px;
     border-radius: 7px;
     transition: all .25s linear;
-    
-    &__line{
+
+    &__line {
         position: absolute;
         background: #fff;
         width: 85%;
@@ -677,32 +141,31 @@ $headerMarginLeftRight: minmax(40px, 100px);
         right: 7%;
         transition: all .4s linear;
     }
-    
+
     .line1 {
         top: 13%;
     }
-    
+
     .line2 {
         top: 40%;
     }
-    
-    .line3{
+
+    .line3 {
         top: 70%;
     }
 }
 
-.burger_close{
-    .line1, .line2 {
+.burger_close {
+
+    .line1,
+    .line2 {
         top: 45%;
         transform: rotate(45deg);
-    } 
-    
-    .line3{
+    }
+
+    .line3 {
         top: 45%;
         transform: rotate(-45deg);
     }
 }
 
-.header .offers .menu_show{
-    display: grid;
-}

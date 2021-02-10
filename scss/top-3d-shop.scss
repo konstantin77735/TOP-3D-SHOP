@@ -1,0 +1,157 @@
+
+.top-3d-shop {
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    justify-items: center;
+    grid-template-areas:
+        "people"
+        "description";
+    grid-row-gap: 34px;
+
+    &__img {
+        grid-area: people;
+        width: 100%;
+    }
+
+    &__description {
+
+        width: 100%;
+        grid-area: description;
+        display: grid;
+        grid-template-columns: 2fr 1fr 4fr;
+        grid-template-areas:
+            'header . about'
+            'btn . about'
+            'btn-desc . .';
+    }
+
+    &__header {
+        grid-area: header;
+        font-family: SF Pro Display;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2.7rem;
+        line-height: 3.2rem;
+        margin: 0
+    }
+
+    &__about {
+        grid-area: about;
+        justify-self: end;
+        font-family: SF Pro Text;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        text-align: justify;
+        line-height: 1.9rem;
+        letter-spacing: -0.7px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .btn-send-resume {
+        grid-area: btn;
+        width: 275px;
+        height: 40px;
+        align-self: end;
+        margin: 31px 0px 4px 0px;
+    }
+
+    .btn-description {
+        margin: 13px 0 0 0;
+        grid-area: btn-desc;
+        font-family: SF Pro Text;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 1.9rem;
+        text-align: justify;
+        letter-spacing: -0.7px;
+        color: #4D4D4D;
+        opacity: .5;
+    }
+}
+
+@media (max-width: 1200px){
+    .top-3d-shop{
+        &__header{
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+        
+        &__description{
+            grid-template-rows: 75px 120px 46px;
+            
+            .btn-send-resume{
+                margin: 8px 0px 4px 0px;
+                font-size: 1.5rem;
+                max-width: 200px;
+            }
+        }
+        
+        &__about{
+            font-size: 1.4rem;
+        }
+    }
+}
+
+
+@media (max-width: 1000px) {
+    
+ .top-3d-shop{
+        &__header{
+            font-size: 2.3rem;
+        }
+        
+        &__about{
+            font-size: 1.6rem;
+        }
+        
+        &__description{
+            grid-template-rows: 75px 135px 46px;
+        }
+        
+        
+    }
+}
+
+@media (max-width: 768px){
+    .top-3d-shop{
+        &__img{
+            width: 88%;
+        }
+        
+        &__description{
+            grid-template-rows: minmax(60px, auto) minmax(180px, auto) minmax(80px, auto) 53px;
+            grid-template-columns: .5fr 8fr .5fr;
+            grid-template-areas:
+                '. header .'
+                '. about .'
+                '. btn . '
+                '. btn-desc .';
+        }
+        
+        &__header, &__about, .btn-send-resume, .btn-description{
+            justify-self: center;
+        }
+        
+        &__header{
+            font-size: 2.4rem;
+        }
+        
+        &__about{
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media (max-width: 399px){
+    .top-3d-shop{
+        &__description{
+            grid-template-rows: minmax(100px, auto) minmax(180px, auto) minmax(78px, auto) 53px;
+        }
+    }
+}

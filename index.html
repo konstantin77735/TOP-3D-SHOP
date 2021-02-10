@@ -3,61 +3,63 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
     <link rel="shortcut icon" type="image/png" href="" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    
+
     <meta name="author" content="Konstantin Stepanyan" />
 </head>
 
 <body>
     <header class="header">
-        
-            <div class="headline">
-                <div class="headline__wrapper">
-                    <span class="headline__item city">Санкт-Петербург</span>
+
+        <div class="headline">
+            <div class="headline__wrapper">
+                <span class="headline__item city">Санкт-Петербург</span>
                 <span class="headline__item number">+7(812)613-58-38</span>
                 <span href="#" class="headline__item time">Пн-пт 10:00-19:00, сб-вс 10:00-17:00 </span>
-                
+
 
                 <a href="#" class="headline__item link_bl send">Напишите нам</a>
                 <a href="#" class="headline__item link_bl contact">Свяжитесь с директором</a>
                 <div class="icons">
-                    <img class="headline__item link" src="img/header/telegram-icon.svg" alt="telegram">
-                    <img class="headline__item link" src="img/header/skype-icon.svg" alt="skype">
-                    <img class="headline__item link" src="img/header/phone-icon.svg" alt="phone">
-                </div>
+                    <img class="icons__item link" src="img/header/telegram-icon.svg" alt="telegram">
+                    <img class="icons__item link" src="img/header/skype-icon.svg" alt="skype">
+                    <img class="icons__item link" src="img/header/phone-icon.svg" alt="phone">
                 </div>
             </div>
+        </div>
 
-            <nav class="nav">
-                    <div class="nav__wrapper">
-                        <div class="logo-wrapper">
-                        <img src="img/header/logo.svg" alt="logo" class="logo">
-                        <span class="logo-wrapper__description">Ваш эксперт <br> на рынке <span class="color_red">3D</span>-техники</span>
-                    </div>
-                    <a class="raiting" href="#">
-                        <img src="img/header/raiting.jpg" alt="yandex-raiting" class="raiting__img">
-                    </a>
-                    <div class="search">
-                        <input type="text" class="search__request-text" placeholder="Введите запрос, например, Formlabs Form 2">
-                        <input type="submit" value="Найти" class="search__btn-find">
-                    </div>
-
-                    <button class="btn btn-login"><img src="img/header/login-img.svg" alt="logo">Войти</button>
-                    <button class="btn btn-basket"><img src="img/header/basket.svg" alt="basket">Корзина пуста</button>
+        <nav class="nav">
+            <div class="nav__wrapper">
+                <div class="logo-wrapper">
+                    <img src="img/header/logo.svg" alt="logo" class="logo">
+                    <span class="logo-wrapper__description">Ваш эксперт <br> на рынке <span class="color_red">3D</span>-техники</span>
                 </div>
-            </nav>
-
-            <div class="offers">
-               
-               <div class="burger">
-                <span class="burger__line line1"></span>
-                <span class="burger__line line2"></span>
-                <span class="burger__line line3"></span>
+                <a class="raiting" href="#">
+                    <img src="img/header/raiting.jpg" alt="yandex-raiting" class="raiting__img">
+                </a>
+                <div class="search">
+                    <input type="text" class="search__request-text" placeholder="Введите запрос, например, Formlabs Form 2">
+                    <button class="btn-find"><span class="btn-find__text">Найти</span><img class="btn-find__img" src="img/header/magnifier.svg" alt="magnifier"></button>
                 </div>
-               
-                <div class="offers__wrapper">
+
+                <button class="btn btn-login"><img src="img/header/login-img.svg" alt="logo">Войти</button>
+                <button class="btn btn-basket"><img src="img/header/basket.svg" alt="basket">Корзина пуста</button>
+            </div>
+        </nav>
+
+        <div class="offers">
+
+            <div class="offers__wrapper">
+                <div class="burger">
+                    <span class="burger__line line1"></span>
+                    <span class="burger__line line2"></span>
+                    <span class="burger__line line3"></span>
+                </div>
+
+
+                <div class="offers__list">
                     <div class="services">
                         <span class="services__item akcii">Акции</span>
                         <span class="services__item about">О нас</span>
@@ -68,25 +70,26 @@
                         <span class="services__item log">Блог</span>
                         <span class="services__item master-klassi">Мастер-классы</span>
                         <span class="services__item orders">Контакты</span>
+                    </div>
+                    <hr class="hr" color="#BDBDBD">
+                    <div class="goods">
+                        <span class="goods__item font_bold">3D-принтеры <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">3D-сканеры <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Станки <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Роботы <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Образование <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Стоматологам <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Гаджеты <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Материалы <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">ПО <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Решения <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Учебный центр <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                        <span class="goods__item font_bold">Услуги <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
+                    </div>
                 </div>
-                <hr class="hr" color="#BDBDBD">
-                <div class="goods">
-                    <span class="goods__item font_bold">3D-принтеры <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">3D-сканеры <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Станки <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Роботы <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Образование <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Стоматологам <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Гаджеты <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Материалы <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">ПО <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Решения <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Учебный центр <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                    <span class="goods__item font_bold">Услуги <img class="goods__img" src="img/header/arrow.svg" alt="arrow"></span>
-                </div>
-                </div>
+            </div>
         </div>
-        
+
 
     </header>
 
@@ -96,23 +99,23 @@
 
         <div class="top-3d-shop__description">
 
-            <h3 class="top-3d-shop__header">Твоя работа <br>
-                в крупнейшем интеграторе <br>
-                цифрового производства
-            </h3>
+            <div class="top-3d-shop__header"><span>Твоя работа</span>
+                <span>в крупнейшем интеграторе</span>
+                <span>цифрового производства</span>
+            </div>
 
-            <p class="top-3d-shop__about">
-                Top 3D Shop – лидер по продажам 3D-оборудования в России и странах СНГ. В 2018 мы стали <br>
-                лучшим интегратором 3D оборудования по аддитивным технологиям и цифровому <br>
-                производству по версии 3D Print Awards. <br> <br>
+            <div class="top-3d-shop__about">
+                <span>Top 3D Shop – лидер по продажам 3D-оборудования в России и странах СНГ. В 2018 мы стали</span>
+                <span>лучшим интегратором 3D оборудования по аддитивным технологиям и цифровому</span>
+                <span>производству по версии 3D Print Awards.</span> <br>
 
-                За 6 лет работы более 10 000 клиентов по всей России и СНГ выбрали Top 3D Shop. В 2018 <br>
-                наш оборот составил 600 млн. рублей, в компании работает более 100 сотрудников. <br> <br>
+                <span>За 6 лет работы более 10 000 клиентов по всей России и СНГ выбрали Top 3D Shop. В 2018</span>
+                <span>наш оборот составил 600 млн. рублей, в компании работает более 100 сотрудников. <br></span> <br>
 
-                Новая цель: 1 млрд торгового оборота в этом году и выход на международные рынки. Если вы <br>
-                — целеустремленный специалист, готовый учиться новым навыкам и учить других, мыслите <br>
-                не просто как исполнитель, а как владелец своего направления, то нам по пути!
-            </p>
+                <span>Новая цель: 1 млрд торгового оборота в этом году и выход на международные рынки. Если вы</span>
+                <span>— целеустремленный специалист, готовый учиться новым навыкам и учить других, мыслите</span>
+                <span>не просто как исполнитель, а как владелец своего направления, то нам по пути!</span>
+            </div>
 
             <button class="btn btn-send-resume">Отправить резюме</button>
 
@@ -126,13 +129,29 @@
         <h2 class="better-to-see__header">Лучше один раз увидеть:</h2>
         <hr class="better-to-see__hr" color="grey">
 
-        <div class="better-to-see__links">
-            <a href="#" class="better-to-see__link">Как устроена наша компания изнутри</a>
-            <a href="#" class="better-to-see__link">Как создавалась компания - необычная история</a>
+        <div class="links">
+            <a href="#" class="better-to-see__link">
+            <span>Как устроена наша компания изнутри </span>
+        <svg class="better-to-see__arrow" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5775 0.744141L5 4.32164L1.4225 0.744141L0.244171 1.92247L5 6.67831L9.75584 1.92247L8.5775 0.744141Z"/>
+</svg>
+            </a>
+            <a href="#" class="better-to-see__link">
+            Как создавалась компания - необычная история 
+<svg class="better-to-see__arrow" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5775 0.744141L5 4.32164L1.4225 0.744141L0.244171 1.92247L5 6.67831L9.75584 1.92247L8.5775 0.744141Z"/>
+</svg>
+
+            </a>
             <a href="#" class="better-to-see__link" style="
     margin-right: 20px;
 ">
-                Читай о нас на 3D Today
+                
+                Читай о нас на 3D Today 
+<svg class="better-to-see__arrow" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5775 0.744141L5 4.32164L1.4225 0.744141L0.244171 1.92247L5 6.67831L9.75584 1.92247L8.5775 0.744141Z"/>
+</svg>
+
             </a>
         </div>
     </section>
@@ -146,20 +165,16 @@
                 <img class="slider__arrow arrow-left" src="img/videos-about-us/arrow.svg" alt="left">
                 <img class="slider__arrow arrow-right" src="img/videos-about-us/arrow.svg" alt="right">
             </div>
-            
+
             <div class="slider">
-                
-                <iframe 
-            class="video first-video"    
-            src="https://www.youtube.com/embed/OYFOWAL1NlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            
-                <iframe 
-            class="video second-video"    
-            src="https://www.youtube.com/embed/SOYBsly_yN8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="video first-video" src="https://www.youtube.com/embed/OYFOWAL1NlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="video second-video" src="https://www.youtube.com/embed/SOYBsly_yN8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
-    
+
     <script src='js/script.js'></script>
 </body>
 

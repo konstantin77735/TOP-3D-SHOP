@@ -1,0 +1,593 @@
+$headerMarginLeftRight: minmax(40px, 100px);
+$containerWidth: 90%;
+
+.header {
+    box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.16);
+    height: 239px;
+    width: 96%;
+    margin: 10px auto 0;
+
+    .headline {
+        background: #FED600;
+        height: 35px;
+        font-size: 1.3rem;
+
+
+        &__wrapper {
+            width: $containerWidth;
+            margin: 0 auto;
+            height: 35px;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-areas: "city number time . send contact icons";
+            grid-template-columns: minmax(40px, 118px) minmax(40px, 107px) minmax(140px, 231px) minmax(40px, 252px) minmax(40px, 103px) minmax(82px, 190px);
+            /*grid-template-columns: 8% 8% 9% 17% 20% 8% 15% 8% 7%;*/
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .city {
+            grid-area: city;
+        }
+
+        .number {
+            grid-area: number;
+        }
+
+        .time {
+            grid-area: time;
+        }
+
+        .send {
+            grid-area: send;
+        }
+
+        .contact {
+            grid-area: contact;
+        }
+
+        .icons {
+            grid-area: icons;
+            display: flex;
+            justify-content: space-between;
+            width: 83px;
+        }
+
+        .link_bl {
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                background: #000;
+                transition: width .3s;
+            }
+
+            &:hover::after {
+                width: 100%;
+                //transition: width .3s;
+            }
+
+        }
+
+    }
+
+    .nav {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.3rem;
+        line-height: 18px;
+
+
+        &__wrapper {
+            display: grid;
+            grid-template-areas: 'logo raiting search . login . basket';
+            grid-template-rows: 99px;
+            /* grid-template-columns: 8% 15% 11% 38% 1% 5% 2% 11%; */
+            grid-template-columns: minmax(28px, 188px) minmax(80px, 150px) minmax(80px, 485px) minmax(10px, 30px) minmax(10px, 79px) minmax(10px, 30px) minmax(10px, 160px);
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            text-align: center;
+            width: $containerWidth;
+            margin: 0 auto;
+        }
+
+        .logo-wrapper {
+            grid-area: logo;
+
+            display: grid;
+            width: 63px;
+            grid-template-columns: minmax(74px, 84px) minmax(123px, 158px);
+            font-family: Open Sans;
+            font-style: italic;
+            font-weight: normal;
+            align-items: center;
+            text-align: left;
+            line-height: 1.8rem;
+
+            &__desctiption {
+                grid-area: description;
+            }
+        }
+
+        .raiting {
+            grid-area: raiting;
+
+            &__img {
+
+                justify-self: center;
+                height: 48px;
+                width: 100px;
+                border: 1px solid #fff;
+                box-shadow: 0px 4px 16px rgba(0, 0, 0, .5);
+                border-radius: 11px;
+                padding: 4px;
+            }
+        }
+
+        .search {
+            grid-area: search;
+            align-self: center;
+            display: grid;
+            grid-template-rows: 4px;
+            justify-items: end;
+
+            &__request-text {
+                width: 100%;
+                height: 44px;
+                left: 550px;
+                top: 74px;
+                padding-left: 10px;
+
+                /* white */
+                background: #FFFFFF;
+                /* ghost */
+                border: 1px solid #BDBDBD;
+                box-sizing: border-box;
+                border-radius: 4px;
+
+            }
+
+            .btn-find {
+                margin-right: 4px;
+                width: 75px;
+                height: 36px;
+                left: 967px;
+                top: 78px;
+                border: 2px solid #D2001C;
+                color: #d2001c;
+                background: #fff;
+                box-sizing: border-box;
+                border-radius: 4px;
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 18px;
+                text-align: center;
+                transition: all .3s linear;
+
+                &:hover {
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+                    color: #800;
+                    border: 2px solid #800;
+                    cursor: pointer;
+                }
+
+                &__text {
+                    display: block;
+                }
+
+                &__img {
+                    display: none;
+                }
+            }
+        }
+
+        .btn-login {
+            grid-area: login;
+
+            height: 40%;
+            background: none;
+            border: none;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        .btn-basket {
+            grid-area: basket;
+            height: 40%;
+            max-width: 160px;
+            padding: 0 17px 1px 5px;
+            border: none;
+            background: #D2001C;
+            color: #fff;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+
+
+
+        .akcii {
+            grid-area: akcii;
+        }
+
+        .about {
+            grid-area: about;
+        }
+
+        .events {
+            grid-area: events;
+        }
+
+        .payment {
+            grid-area: payment;
+        }
+
+        .my-order {
+            grid-area: my-order;
+        }
+
+        .zakupki {
+            grid-area: zakupki;
+        }
+
+        .master-klassi {
+            grid-area: master-klassi;
+        }
+
+        .orders {
+            grid-area: orders;
+        }
+    }
+
+    .offers {
+
+        font-family: Open Sans;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        font-style: normal;
+
+        &__wrapper {
+            width: $containerWidth;
+            margin: auto;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-areas:
+                "services"
+                "hr"
+                "goods";
+            /* grid-template-columns: 8% 83% 9%; */
+            grid-template-columns: minmax(10px, 1122px);
+            grid-template-rows: 52px 1px 52px;
+        }
+
+        .services {
+            grid-area: services;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: normal;
+
+            &__item {
+                cursor: pointer;
+            }
+        }
+
+        .hr {
+            grid-area: hr;
+            margin: 0;
+            padding: 0;
+        }
+
+        .goods {
+            grid-area: goods;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-weight: bold;
+
+            &__item {
+                display: block;
+                position: relative;
+                cursor: pointer;
+
+                /*     &::after {
+                    position: absolute;
+                    content: '';
+                    bottom: 2px;
+                    right: -17px;
+                    height: 12px;
+                    width: 12px;
+                    background: url(../img/header/arrow.svg) center no-repeat;
+                    cursor: pointer;
+                } */
+            }
+
+            &__img {
+                margin-left: 5px;
+            }
+        }
+    }
+
+
+}
+
+
+@media (max-width:1200px) {
+
+    .header {
+
+        .headline__wrapper,
+        .nav__wrapper,
+        .offers__wrapper {
+            width: 95%;
+            font-size: 1.1rem;
+        }
+
+        .offers .goods__img {
+            margin-left: 0px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    $headerMarginLeftRight: minmax(5px, 30px);
+
+    .header {
+        height: 200px;
+        transition: height .1s linear;
+
+        .headline {
+            grid-template-areas: ". city number time send contact icons .";
+            grid-template-columns: $headerMarginLeftRight minmax(49px, 134px) minmax(53px, 125px) minmax(140px, 279px) minmax(40px, 205px) minmax(102px, 174px) minmax(36px, 119px) $headerMarginLeftRight;
+            grid-template-columns: minmax(45px, 84px) minmax(123px, 158px);
+            grid-column-gap: 9px;
+        }
+
+        .nav {
+            .logo-wrapper {
+                grid-template-rows: 80px;
+                grid-template-columns: minmax(45px, 84px) minmax(123px, 158px);
+                grid-column-gap: 9px;
+
+                .logo {
+                    max-width: 45px;
+                }
+            }
+
+            &__wrapper {
+                grid-template-rows: 80px;
+                grid-template-columns: minmax(28px, 188px) minmax(80px, 150px) minmax(80px, 485px) minmax(10px, 15px) minmax(10px, 70px) minmax(10px, 20px) minmax(15px, 160px);
+
+                .raiting {
+                    &__img {
+                        margin-top: 8px;
+                    }
+                }
+
+                .search {
+
+                    &__request-text {
+                        height: 35px;
+                    }
+
+                    .btn-find {
+                        height: 26px;
+                        width: 30px;
+
+                        &__img {
+                            display: block;
+                        }
+
+                        &__text {
+                            display: none;
+                        }
+                    }
+
+                    &__request-text,
+                    .btn-find {
+                        font-size: 1.2rem;
+                    }
+                }
+
+
+
+                .btn {
+                    font-size: 1.2rem;
+                    justify-content: space-around;
+                }
+
+            }
+        }
+
+        .offers {
+
+            &__wrapper {
+                display: grid;
+                grid-template-columns: 45px 1fr;
+                margin-top: 15px;
+
+
+                .offers__list {
+                    display: none;
+                    height: 50vh;
+
+                    grid-template-areas: "services hr goods";
+                    grid-template-rows: 260px;
+                    grid-template-columns: 100px 1px 100px;
+                    column-gap: 20px;
+                    justify-self: center;
+                }
+
+                .services {
+                    flex-direction: column;
+                }
+
+                .goods {
+                    font-size: 1.25rem;
+                    flex-direction: column;
+
+                    &__img {
+                        margin-left: 2px;
+                        transform: rotateZ(-90deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        .headline {
+            &__wrapper {
+                grid-template-areas: "city number time send contact icons";
+                grid-template-columns: minmax(69px, 90px) minmax(70px, 79px) minmax(73px, 231px) minmax(63px, 80px) minmax(103px, 131px) minmax(44px, 98px);
+
+                .icons {
+                    width: 40px;
+
+                    &__item {
+                        height: 10px;
+                    }
+                }
+
+            }
+        }
+
+        .nav {
+
+            &__wrapper {
+                grid-template-areas: 'logo . search . login . basket';
+                grid-template-columns: minmax(85px, 142px) 9px minmax(76px, 485px) 9px minmax(10px, 60px) 9px;
+
+                .raiting {
+                    display: none;
+                }
+
+                .search {
+                    .btn-login {
+                        max-width: 62px;
+                    }
+
+                    .btn-basket {
+                        min-width: 90px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    $logoWidth: 40px;
+
+    .header {
+        .headline {
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__wrapper {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-areas:
+                    "city send time"
+                    "number contact icons";
+                justify-items: start;
+            }
+        }
+
+        .nav {
+            &__wrapper {
+                grid-template-columns: $logoWidth 9px minmax(76px, 485px) 10px minmax(10px, 60px) 10px 75px;
+            }
+
+            .logo-wrapper {
+                grid-gap: 0;
+                grid-template-columns: $logoWidth;
+                width: $logoWidth;
+
+                .logo {
+                    max-width: $logoWidth;
+                }
+
+                &__description {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .header {
+        .nav {
+            &__wrapper {
+                grid-template-areas:
+                    'logo search search search'
+                    'offers . login basket';
+                grid-template-columns: 57px 1fr 1fr 1fr;
+                grid-template-rows: 55px 43px;
+                grid-row-gap: 6px;
+
+                .btn-login {
+                    justify-content: start;
+                    height: 75%;
+
+                    & img {
+                        margin-right: 10px;
+                    }
+                }
+
+                .btn-basket {
+                    height: 75%;
+                }
+
+                .offers {
+                    display: grid;
+                    grid-area: offers;
+
+                    &__wrapper {
+                        position: relative;
+                        margin: 0;
+                        grid-template-columns: 40px 1fr;
+                    }
+
+                    &__list {
+                        position: absolute;
+                        top: 60px;
+                        left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header .offers .offers__wrapper .menu_show {
+    display: grid;
+}
