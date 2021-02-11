@@ -94,12 +94,43 @@ body {
     cursor: pointer;
 }
 
+.link_bl {
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                background: #000;
+                transition: width .3s;
+            }
+
+            &:hover::after {
+                width: 100%;
+                //transition: width .3s;
+            }
+
+        }
+
 .btn {
     background: #D2001C;
     border: none;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
+    transition: all .2s linear;
+    
+    &:hover{
+        box-shadow: 0 0 15px rgba(0,0,0, .75);
+    }
+    
+    &:active, 
+    &:focus {
+        outline: none; 
+    }
 }
 
 
@@ -169,3 +200,6 @@ body {
     }
 }
 
+.goods__item{
+    cursor: pointer;
+}

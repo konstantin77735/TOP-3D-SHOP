@@ -18,16 +18,16 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-areas: "city number time . send contact icons";
-  grid-template-columns: minmax(40px, 118px) minmax(40px, 107px) minmax(140px, 231px) minmax(40px, 252px) minmax(40px, 103px) minmax(82px, 190px);
-  /*grid-template-columns: 8% 8% 9% 17% 20% 8% 15% 8% 7%;*/
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
+  grid-template-areas: "city number time . send contact icons";
+  grid-template-columns: minmax(40px, 132px) minmax(40px, 110px) minmax(140px, 246px) minmax(40px, 272px) minmax(40px, 103px) minmax(82px, 220px);
 }
 
 .header .headline .city {
   grid-area: city;
+  justify-self: start;
 }
 
 .header .headline .number {
@@ -51,25 +51,7 @@
   display: flex;
   justify-content: space-between;
   width: 83px;
-}
-
-.header .headline .link_bl {
-  display: inline-block;
-  color: #000;
-  text-decoration: none;
-}
-
-.header .headline .link_bl::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #000;
-  transition: width .3s;
-}
-
-.header .headline .link_bl:hover::after {
-  width: 100%;
+  justify-self: flex-end;
 }
 
 .header .nav {
@@ -78,28 +60,27 @@
   font-weight: 600;
   font-size: 1.3rem;
   line-height: 18px;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .header .nav__wrapper {
   display: grid;
-  grid-template-areas: 'logo raiting search . login . basket';
-  grid-template-rows: 99px;
-  /* grid-template-columns: 8% 15% 11% 38% 1% 5% 2% 11%; */
-  grid-template-columns: minmax(28px, 188px) minmax(80px, 150px) minmax(80px, 485px) minmax(10px, 30px) minmax(10px, 79px) minmax(10px, 30px) minmax(10px, 160px);
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
   text-align: center;
   width: 90%;
   margin: 0 auto;
+  grid-template-areas: 'logo logo raiting search search search search search search login basket basket' 'promotions about events payment payment my-order my-order purchases blog master-classes master-classes contacts' '3d-printers 3d-scanners machine-tools robots education dentists gadgets materials po solutions educational-center services';
+  grid-template-columns: repeat(12, minmax(97px, 1fr));
+  grid-template-rows: 100px 50px 55px;
+  align-items: center;
 }
 
 .header .nav .logo-wrapper {
   grid-area: logo;
   display: grid;
   width: 63px;
-  grid-template-columns: minmax(74px, 84px) minmax(123px, 158px);
+  grid-template-columns: minmax(64px, 85px) minmax(140px, 158px);
   font-family: Open Sans;
   font-style: italic;
   font-weight: normal;
@@ -108,12 +89,15 @@
   line-height: 1.8rem;
 }
 
-.header .nav .logo-wrapper__desctiption {
-  grid-area: description;
+.header .nav .logo-wrapper .logo-wrapper__description {
+  padding-left: 12px;
+  font-size: 1.345rem;
 }
 
 .header .nav .raiting {
   grid-area: raiting;
+  padding-left: 31px;
+  justify-self: start;
 }
 
 .header .nav .raiting__img {
@@ -124,6 +108,7 @@
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
   border-radius: 11px;
   padding: 4px;
+  max-width: 88px;
 }
 
 .header .nav .search {
@@ -132,6 +117,8 @@
   display: grid;
   grid-template-rows: 4px;
   justify-items: end;
+  max-width: 100%;
+  margin-left: 61px;
 }
 
 .header .nav .search__request-text {
@@ -167,13 +154,6 @@
   transition: all .3s linear;
 }
 
-.header .nav .search .btn-find:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  color: #800;
-  border: 2px solid #800;
-  cursor: pointer;
-}
-
 .header .nav .search .btn-find__text {
   display: block;
 }
@@ -192,126 +172,187 @@
   align-items: center;
   justify-content: space-between;
   padding: 0;
+  margin-left: 31px;
+  padding-right: 13px;
+  min-width: 70%;
+  justify-self: center;
 }
 
 .header .nav .btn-basket {
   grid-area: basket;
   height: 40%;
-  max-width: 160px;
   padding: 0 17px 1px 5px;
   border: none;
   background: #D2001C;
   color: #fff;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
-  display: flex;
   -webkit-box-pack: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  justify-content: space-around;
+  width: 100%;
+  max-width: 166px;
+  justify-self: end;
+  display: flex;
+  justify-content: center;
 }
 
-.header .nav .akcii {
-  grid-area: akcii;
+.header .nav .btn-basket__img {
+  padding-right: 11px;
+}
+
+.header .nav .promotions {
+  justify-self: start;
+  grid-area: promotions;
 }
 
 .header .nav .about {
+  margin-left: 5px;
+  justify-self: baseline;
   grid-area: about;
 }
 
 .header .nav .events {
+  display: block;
+  padding-right: 22px;
+  justify-self: end;
   grid-area: events;
 }
 
 .header .nav .payment {
+  padding-left: 37px;
+  justify-self: start;
   grid-area: payment;
 }
 
 .header .nav .my-order {
+  max-width: 130px;
+  justify-self: center;
   grid-area: my-order;
 }
 
-.header .nav .zakupki {
-  grid-area: zakupki;
+.header .nav .purchases {
+  max-width: 70px;
+  justify-self: center;
+  grid-area: purchases;
 }
 
-.header .nav .master-klassi {
-  grid-area: master-klassi;
+.header .nav .blog {
+  justify-self: end;
+  grid-area: blog;
 }
 
-.header .nav .orders {
-  grid-area: orders;
+.header .nav .master-classes {
+  max-width: 86px;
+  justify-self: center;
+  grid-area: master-classes;
 }
 
-.header .offers {
-  font-family: Open Sans;
-  font-size: 1.3rem;
-  line-height: 1.8rem;
-  font-style: normal;
+.header .nav .contacts {
+  justify-self: end;
+  max-width: 65%;
+  grid-area: contacts;
 }
 
-.header .offers__wrapper {
-  width: 90%;
-  margin: auto;
+.header .nav .printers {
+  justify-self: start;
+  font-size: 1.2rem;
+  grid-area: 3d-printers;
 }
 
-.header .offers__list {
-  display: grid;
-  grid-template-areas: "services" "hr" "goods";
-  /* grid-template-columns: 8% 83% 9%; */
-  grid-template-columns: minmax(10px, 1122px);
-  grid-template-rows: 52px 1px 52px;
+.header .nav .scanners {
+  margin-left: 17px;
+  font-size: 1.2rem;
+  grid-area: 3d-scanners;
 }
 
-.header .offers .services {
-  grid-area: services;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: normal;
+.header .nav .machine-tools {
+  justify-self: center;
+  max-width: 59px;
+  /* margin-left: 5px; */
+  font-size: 1.2rem;
+  grid-area: machine-tools;
 }
 
-.header .offers .services__item {
-  cursor: pointer;
+.header .nav .robots {
+  max-width: 53px;
+  margin-left: 6px;
+  font-size: 1.2rem;
+  grid-area: robots;
 }
 
-.header .offers .hr {
-  grid-area: hr;
-  margin: 0;
-  padding: 0;
-}
-
-.header .offers .goods {
-  grid-area: goods;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-}
-
-.header .offers .goods__item {
-  display: block;
+.header .nav .education {
   position: relative;
-  cursor: pointer;
-  /*     &::after {
-                    position: absolute;
-                    content: '';
-                    bottom: 2px;
-                    right: -17px;
-                    height: 12px;
-                    width: 12px;
-                    background: url(../img/header/arrow.svg) center no-repeat;
-                    cursor: pointer;
-                } */
+  left: -13px;
+  grid-area: education;
+  justify-self: start;
 }
 
-.header .offers .goods__img {
-  margin-left: 5px;
+.header .nav .dentists {
+  grid-area: dentists;
+  min-width: 99px;
+}
+
+.header .nav .gadgets {
+  max-width: 65px;
+  margin-left: 27px;
+  grid-area: gadgets;
+}
+
+.header .nav .materials {
+  max-width: 83px;
+  position: relative;
+  right: -13px;
+  grid-area: materials;
+}
+
+.header .nav .po {
+  position: relative;
+  left: 12px;
+  grid-area: po;
+  max-width: 35px;
+  margin-right: 10px;
+  justify-self: center;
+}
+
+.header .nav .solutions {
+  position: relative;
+  left: -14px;
+  max-width: 69px;
+  grid-area: solutions;
+  justify-self: center;
+}
+
+.header .nav .educational-center {
+  position: relative;
+  left: 2px;
+  min-width: 101px;
+  font-size: 1.2rem;
+  grid-area: educational-center;
+}
+
+.header .nav .services {
+  justify-self: end;
+  grid-area: services;
+  max-width: 65%;
 }
 
 .header .offers .offers__wrapper .menu_show {
   display: grid;
+}
+
+.services__item {
+  font-family: Open Sans;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-style: normal;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.hr {
+  position: absolute;
+  top: 145px;
+  left: 0;
+  width: 100%;
 }
 
 .top-3d-shop {
@@ -445,11 +486,7 @@
   transition: background .3s linear;
   padding-top: 18px;
   padding-right: 2px;
-  /*
-               &:hover{
-                fill: #D2001C;
-            }
-            */
+  transition: fill .3s linear;
 }
 
 html,
@@ -551,6 +588,27 @@ body {
   cursor: pointer;
 }
 
+.link_bl {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+.link_bl::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  -webkit-transition: width .3s;
+  -o-transition: width .3s;
+  transition: width .3s;
+}
+
+.link_bl:hover::after {
+  width: 100%;
+}
+
 .btn {
   background: #D2001C;
   border: none;
@@ -558,6 +616,19 @@ body {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   cursor: pointer;
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
 }
 
 .burger {
@@ -612,6 +683,10 @@ body {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+
+.goods__item {
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {

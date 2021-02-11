@@ -20,16 +20,20 @@ $containerWidth: 90%;
             display: grid;
             justify-items: center;
             align-items: center;
-            grid-template-areas: "city number time . send contact icons";
-            grid-template-columns: minmax(40px, 118px) minmax(40px, 107px) minmax(140px, 231px) minmax(40px, 252px) minmax(40px, 103px) minmax(82px, 190px);
-            /*grid-template-columns: 8% 8% 9% 17% 20% 8% 15% 8% 7%;*/
+            
             font-family: Open Sans;
             font-style: normal;
             font-weight: 600;
+            
+            grid-template-areas: "city number time . send contact icons";            
+            grid-template-columns: minmax(40px, 132px) minmax(40px, 110px) minmax(140px, 246px) minmax(40px, 272px) minmax(40px, 103px) minmax(82px, 220px);
         }
 
         .city {
             grid-area: city;
+            
+            
+           justify-self: start;
         }
 
         .number {
@@ -53,28 +57,12 @@ $containerWidth: 90%;
             display: flex;
             justify-content: space-between;
             width: 83px;
+            
+            justify-self: flex-end;
+            
         }
 
-        .link_bl {
-            display: inline-block;
-            color: #000;
-            text-decoration: none;
-
-            &::after {
-                content: '';
-                display: block;
-                width: 0;
-                height: 2px;
-                background: #000;
-                transition: width .3s;
-            }
-
-            &:hover::after {
-                width: 100%;
-                //transition: width .3s;
-            }
-
-        }
+        
 
     }
 
@@ -84,29 +72,33 @@ $containerWidth: 90%;
         font-weight: 600;
         font-size: 1.3rem;
         line-height: 18px;
+        
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
 
 
         &__wrapper {
             display: grid;
-            grid-template-areas: 'logo raiting search . login . basket';
-            grid-template-rows: 99px;
-            /* grid-template-columns: 8% 15% 11% 38% 1% 5% 2% 11%; */
-            grid-template-columns: minmax(28px, 188px) minmax(80px, 150px) minmax(80px, 485px) minmax(10px, 30px) minmax(10px, 79px) minmax(10px, 30px) minmax(10px, 160px);
-            -webkit-box-align: center;
-            -webkit-align-items: center;
-            -ms-flex-align: center;
-            align-items: center;
             text-align: center;
             width: $containerWidth;
             margin: 0 auto;
+  
+            grid-template-areas:
+'logo logo raiting search search search search search search login basket basket'
+'promotions about events payment payment my-order my-order purchases blog master-classes master-classes contacts'
+'3d-printers 3d-scanners machine-tools robots education dentists gadgets materials po solutions educational-center services';
+            grid-template-columns: repeat(12, minmax(97px, 1fr));
+            grid-template-rows: 100px 50px 55px;
+            align-items: center;
         }
 
         .logo-wrapper {
             grid-area: logo;
-
+            
             display: grid;
             width: 63px;
-            grid-template-columns: minmax(74px, 84px) minmax(123px, 158px);
+            grid-template-columns: minmax(64px, 85px) minmax(140px, 158px);
             font-family: Open Sans;
             font-style: italic;
             font-weight: normal;
@@ -114,13 +106,18 @@ $containerWidth: 90%;
             text-align: left;
             line-height: 1.8rem;
 
-            &__desctiption {
-                grid-area: description;
+            .logo-wrapper__description {
+                
+                
+                padding-left: 12px;
+                font-size: 1.345rem;
             }
         }
 
         .raiting {
             grid-area: raiting;
+            padding-left: 31px;
+            justify-self: start;
 
             &__img {
 
@@ -131,6 +128,8 @@ $containerWidth: 90%;
                 box-shadow: 0px 4px 16px rgba(0, 0, 0, .5);
                 border-radius: 11px;
                 padding: 4px;
+                
+                max-width: 88px;
             }
         }
 
@@ -140,6 +139,8 @@ $containerWidth: 90%;
             display: grid;
             grid-template-rows: 4px;
             justify-items: end;
+            max-width: 100%;
+            margin-left: 61px;
 
             &__request-text {
                 width: 100%;
@@ -175,13 +176,6 @@ $containerWidth: 90%;
                 text-align: center;
                 transition: all .3s linear;
 
-                &:hover {
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-                    color: #800;
-                    border: 2px solid #800;
-                    cursor: pointer;
-                }
-
                 &__text {
                     display: block;
                 }
@@ -194,7 +188,6 @@ $containerWidth: 90%;
 
         .btn-login {
             grid-area: login;
-
             height: 40%;
             background: none;
             border: none;
@@ -203,134 +196,120 @@ $containerWidth: 90%;
             align-items: center;
             justify-content: space-between;
             padding: 0;
+            margin-left: 31px;
+            padding-right: 13px;
+            min-width: 70%;
+            justify-self: center;
         }
 
         .btn-basket {
             grid-area: basket;
             height: 40%;
-            max-width: 160px;
             padding: 0 17px 1px 5px;
             border: none;
             background: #D2001C;
             color: #fff;
-            -webkit-border-radius: 4px;
             border-radius: 4px;
-            display: flex;
             -webkit-box-pack: center;
-            -webkit-align-items: center;
-            -ms-flex-align: center;
             align-items: center;
-            justify-content: space-around;
+            
+            width: 100%;
+            max-width: 166px;
+            justify-self: end;
+            display: flex;
+            justify-content: center;
+            
+            &__img{
+                padding-right: 11px;
+            }
         }
 
 
-
-
-        .akcii {
-            grid-area: akcii;
+        .promotions{
+            justify-self: start;grid-area: promotions;
         }
 
-        .about {
-            grid-area: about;
+        .about{
+            margin-left: 5px;justify-self: baseline;grid-area: about;
         }
-
-        .events {
-            grid-area: events;
+        
+        .events{
+            display: block;padding-right: 22px;justify-self: end;grid-area: events;
         }
-
-        .payment {
-            grid-area: payment;
+        
+        .payment{
+            padding-left: 37px;justify-self: start;grid-area: payment;
         }
-
-        .my-order {
-            grid-area: my-order;
+        
+        .my-order{
+            max-width: 130px;justify-self: center;grid-area: my-order;
         }
-
-        .zakupki {
-            grid-area: zakupki;
+        
+        .purchases{
+            max-width: 70px;justify-self: center;grid-area: purchases;
         }
-
-        .master-klassi {
-            grid-area: master-klassi;
+        
+        .blog{
+            justify-self: end;grid-area: blog;
         }
-
-        .orders {
-            grid-area: orders;
+        
+        .master-classes{
+            max-width: 86px;justify-self: center;grid-area: master-classes;
+        }
+        
+        .contacts{
+            justify-self: end;max-width: 65%;grid-area: contacts;
+        }
+        
+        
+        .printers{
+            justify-self: start;font-size: 1.2rem;grid-area: 3d-printers;
+        }
+        
+        .scanners{
+            margin-left: 17px;font-size: 1.2rem;grid-area: 3d-scanners;
+        }
+        
+        .machine-tools{
+            justify-self: center;max-width: 59px;/* margin-left: 5px; */font-size: 1.2rem;grid-area: machine-tools;
+        }
+        
+        .robots{
+            max-width: 53px;margin-left: 6px;font-size: 1.2rem;grid-area: robots;
+        }
+        
+        .education{
+            position: relative;left: -13px;grid-area: education;justify-self: start;
+        }
+        
+        .dentists{
+            grid-area: dentists;min-width: 99px;
+        }
+        
+        .gadgets{
+            max-width: 65px;margin-left: 27px;grid-area: gadgets;
+        }
+        
+        .materials{
+            max-width: 83px;position: relative;right: -13px;grid-area: materials;
+        }
+        
+        .po{
+            position: relative;left: 12px;grid-area: po;max-width: 35px;margin-right: 10px;justify-self: center;
+        }
+        
+        .solutions{
+            position: relative;left: -14px;max-width: 69px;grid-area: solutions;justify-self: center;
+        }
+        
+        .educational-center{
+            position: relative;left: 2px;min-width: 101px;font-size: 1.2rem;grid-area: educational-center;
+        }
+        
+        .services{
+            justify-self: end;grid-area: services;max-width: 65%;
         }
     }
-
-    .offers {
-
-        font-family: Open Sans;
-        font-size: 1.3rem;
-        line-height: 1.8rem;
-        font-style: normal;
-
-        &__wrapper {
-            width: $containerWidth;
-            margin: auto;
-        }
-
-        &__list {
-            display: grid;
-            grid-template-areas:
-                "services"
-                "hr"
-                "goods";
-            /* grid-template-columns: 8% 83% 9%; */
-            grid-template-columns: minmax(10px, 1122px);
-            grid-template-rows: 52px 1px 52px;
-        }
-
-        .services {
-            grid-area: services;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: normal;
-
-            &__item {
-                cursor: pointer;
-            }
-        }
-
-        .hr {
-            grid-area: hr;
-            margin: 0;
-            padding: 0;
-        }
-
-        .goods {
-            grid-area: goods;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-weight: bold;
-
-            &__item {
-                display: block;
-                position: relative;
-                cursor: pointer;
-
-                /*     &::after {
-                    position: absolute;
-                    content: '';
-                    bottom: 2px;
-                    right: -17px;
-                    height: 12px;
-                    width: 12px;
-                    background: url(../img/header/arrow.svg) center no-repeat;
-                    cursor: pointer;
-                } */
-            }
-
-            &__img {
-                margin-left: 5px;
-            }
-        }
-    }
-
 
 }
 
@@ -590,4 +569,21 @@ $containerWidth: 90%;
 
 .header .offers .offers__wrapper .menu_show {
     display: grid;
+}
+
+.services__item {
+    font-family: Open Sans;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-style: normal;
+    font-weight: 100;
+    
+    cursor: pointer;
+}
+
+.hr{
+    position: absolute;
+    top: 145px;
+    left: 0;
+    width: 100%;
 }

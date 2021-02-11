@@ -61,13 +61,7 @@
             transition: background .3s linear;
             padding-top: 18px;
             padding-right: 2px;
-
-            /*
-               &:hover{
-                fill: #D2001C;
-            }
-            */
-
+            transition: fill .3s linear;
         }
     }
 }
