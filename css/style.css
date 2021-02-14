@@ -71,7 +71,7 @@
   width: 90%;
   margin: 0 auto;
   grid-template-areas: 'logo logo raiting search search search search search search login basket basket' 'promotions about events payment payment my-order my-order purchases blog master-classes master-classes contacts' '3d-printers 3d-scanners machine-tools robots education dentists gadgets materials po solutions educational-center services';
-  grid-template-columns: repeat(12, minmax(97px, 1fr));
+  grid-template-columns: repeat(12, minmax(66px, 1fr));
   grid-template-rows: 100px 50px 55px;
   align-items: center;
 }
@@ -135,6 +135,10 @@
   border-radius: 4px;
 }
 
+.header .nav .search__request-text:focus {
+  outline: none;
+}
+
 .header .nav .search .btn-find {
   margin-right: 4px;
   width: 75px;
@@ -176,6 +180,10 @@
   padding-right: 13px;
   min-width: 70%;
   justify-self: center;
+}
+
+.header .nav .btn-login__img {
+  margin-right: 14px;
 }
 
 .header .nav .btn-basket {
@@ -288,7 +296,7 @@
 
 .header .nav .dentists {
   grid-area: dentists;
-  min-width: 99px;
+  min-width: 101px;
 }
 
 .header .nav .gadgets {
@@ -335,11 +343,7 @@
   max-width: 65%;
 }
 
-.header .offers .offers__wrapper .menu_show {
-  display: grid;
-}
-
-.services__item {
+.nav__menu-item {
   font-family: Open Sans;
   font-size: 1.3rem;
   line-height: 1.8rem;
@@ -489,28 +493,22 @@
   transition: fill .3s linear;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 10px;
-}
-
 .videos-about-us {
-  width: 96%;
+  width: 96vw;
   height: 500px;
-  margin: 0 auto 125px;
   background: #f9f9f9;
-  display: grid;
-  grid-template-areas: '. content .';
-  grid-template-columns: 8% 84% 8%;
+  display: block;
+  margin: 0 auto 125px auto;
 }
 
 .videos-about-us__wrapper {
+  width: 95vw;
   grid-area: content;
   display: grid;
   grid-template-rows: 103px 286px;
-  grid-template-areas: 'header . . . slider-arrows-wrapper' 'slider slider slider slider slider';
+  grid-template-areas: 'header . . . arrow-wrapper' 'slider slider slider slider slider';
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 auto;
 }
 
 .videos-about-us__header {
@@ -520,64 +518,190 @@ body {
   font-weight: normal;
   font-size: 3rem;
   line-height: 4.3rem;
-  /* identical to box height */
   margin: 0;
+  align-self: center;
+  justify-self: end;
+  position: relative;
+  left: 36px;
+  width: 155px;
+}
+
+.videos-about-us .slider__arrow-wrapper {
   align-self: center;
   justify-self: center;
 }
 
+.videos-about-us .slider__control {
+  top: 45%;
+  transition: box-shadow .3s linear;
+}
+
+.videos-about-us .slider__control:hover {
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.5);
+}
+
 .videos-about-us .slider {
   grid-area: slider;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-.videos-about-us .slider__arrows-wrapper {
-  grid-area: slider-arrows-wrapper;
-  height: 26px;
-  width: 80px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  justify-self: end;
+.videos-about-us .slider__arrow-wrapper {
+  grid-area: arrow-wrapper;
   align-self: center;
 }
 
-.videos-about-us .slider__arrow {
-  padding: 6px 0;
-  width: 50%;
-  border: 1px solid #e5e5e5;
-  -webkit-border-radius: 8px 0px 0 8px;
-  border-radius: 8px 0px 0 8px;
-  cursor: pointer;
+.videos-about-us .slider__wrapper {
+  display: grid;
+  transition: transform 0.5s ease 0s;
+  min-width: 400%;
+  grid-template-columns: repeat(4, 0.13fr);
+  grid-template-rows: 293px;
+  transform: translateX(0px);
+  width: 400%;
 }
 
-.videos-about-us .arrow-right {
-  -webkit-transform: rotateZ(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotateZ(180deg);
+.videos-about-us .slider__control {
+  padding: 6px 0;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  top: 45%;
+  height: 23px;
+  width: 30px;
 }
 
 .videos-about-us .video {
-  width: 47%;
+  width: 75%;
+  height: 100%;
+  margin: auto;
 }
 
-.videos-about-us .first-video {
-  grid-area: first-video;
+.arrow-next {
+  border-radius: 0px 6px 6px 0px;
 }
 
-.videos-about-us .second-video {
-  grid-area: second-video;
+.arrow-prev {
+  border-radius: 6px 0px 0px 6px;
+  transform: translateX(1px);
+}
+
+.popup-login,
+.popup-resume {
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  opacity: 0;
+  z-index: 9;
+}
+
+.popup-login__overlay,
+.popup-resume__overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  height: 1000000%;
+  width: 1000000%;
+}
+
+.popup-login__window,
+.popup-resume__window {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 440px;
+  height: 300px;
+  background: #fff;
+}
+
+.popup-login__content-wrapper,
+.popup-resume__content-wrapper {
+  height: 67%;
+  width: 90%;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.popup-login__header,
+.popup-resume__header {
+  font-size: 2.5rem;
+  margin: 10px 0px;
+}
+
+.popup-login__paragraph,
+.popup-resume__paragraph {
+  margin: 30px 0 0 0;
+}
+
+.popup-login__input-name,
+.popup-resume__input-name {
+  width: 60%;
+  max-width: 230px;
+  border: none;
+  border-bottom: 2px solid grey;
+}
+
+.popup-login__input-name:focus,
+.popup-resume__input-name:focus {
+  outline: none;
+}
+
+.popup-login__login,
+.popup-resume__login {
+  height: 20%;
+  width: 25%;
+}
+
+.popup-login__close,
+.popup-resume__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  fill: #888;
+  -webkit-transition: fill .3s linear;
+  -o-transition: fill .3s linear;
+  transition: fill .3s linear;
+  cursor: pointer;
+}
+
+.popup-login__close,
+.popup-resume__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  fill: #888;
+  -webkit-transition: fill .3s linear;
+  -o-transition: fill .3s linear;
+  transition: fill .3s linear;
+  cursor: pointer;
+}
+
+.popup-login__close:hover,
+.popup-resume__close:hover {
+  fill: #a00;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  height: 100%;
 }
 
 .color_red {
@@ -697,8 +821,167 @@ body {
     font-size: 1.1rem;
   }
 
-  .header .offers .goods__img {
-    margin-left: 0px;
+  .header .nav__wrapper {
+    grid-template-columns: repeat(12, minmax(66px, 1fr));
+  }
+
+  .header .nav__wrapper .search {
+    margin-left: 96px;
+  }
+
+  .header .nav__wrapper .search__request-text {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .btn-find {
+    font-size: 1.1rem;
+    max-width: 62px;
+  }
+
+  .header .nav__wrapper .raiting {
+    padding-left: 54px;
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .btn-login {
+    font-size: 1.1rem;
+    margin-left: 25px;
+    padding-right: 7px;
+    max-width: 81px;
+  }
+
+  .header .nav__wrapper .btn-login__img {
+    margin-right: 7px;
+  }
+
+  .header .nav__wrapper .btn-basket {
+    padding: 0 7px 1px 5px;
+    max-width: 114px;
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .btn-basket__img {
+    padding-right: 5px;
+  }
+
+  .header .nav__wrapper .promotions {
+    font-size: 1.1rem;
+    padding-left: 2px;
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .about {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .events {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .payment {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .my-order {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .purchases {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .blog {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .master-classes {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .contacts {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .printers {
+    font-size: 1.05rem;
+    min-width: 70px;
+    max-width: 123px;
+    width: auto;
+    justify-self: self-start;
+  }
+
+  .header .nav__wrapper .printers img {
+    width: 8px;
+  }
+
+  .header .nav__wrapper .scanners {
+    font-size: 1.05rem;
+    margin-left: 20px;
+    min-width: 72px;
+  }
+
+  .header .nav__wrapper .machine-tools {
+    font-size: 1.05rem;
+    margin-left: 43px;
+    min-width: 50px;
+  }
+
+  .header .nav__wrapper .robots {
+    font-size: 1.05rem;
+    margin-left: 27px;
+    min-width: 44px;
+  }
+
+  .header .nav__wrapper .education {
+    font-size: 1.05rem;
+    left: 21px;
+    min-width: 63px;
+  }
+
+  .header .nav__wrapper .dentists {
+    min-width: 83px;
+    left: 30px;
+    position: relative;
+    font-size: 1.05rem;
+  }
+
+  .header .nav__wrapper .gadgets {
+    font-size: 1.05rem;
+    left: 42px;
+    max-width: 58px;
+    position: relative;
+    margin: 0;
+  }
+
+  .header .nav__wrapper .materials {
+    font-size: 1.05rem;
+    max-width: 71px;
+    right: -37px;
+  }
+
+  .header .nav__wrapper .po {
+    font-size: 1.05rem;
+    margin: 0;
+    position: relative;
+    left: 20px;
+  }
+
+  .header .nav__wrapper .solutions {
+    font-size: 1.05rem;
+    left: 1px;
+  }
+
+  .header .nav__wrapper .educational-center {
+    position: relative;
+    min-width: 88px;
+    left: 9px;
+    font-size: 1.05rem;
+  }
+
+  .header .nav__wrapper .services {
+    font-size: 1.05rem;
+    position: relative;
+    left: 0px;
   }
 
   .top-3d-shop__header {
@@ -738,13 +1021,13 @@ body {
     font-size: 2.5rem;
   }
 
+  .videos-about-us__header {
+    font-size: 2.8rem;
+  }
+
   html,
   body {
     font-size: 8px;
-  }
-
-  .videos-about-us__header {
-    font-size: 2.8rem;
   }
 }
 
@@ -763,30 +1046,44 @@ body {
 
   .header .nav .logo-wrapper {
     grid-template-rows: 80px;
-    grid-template-columns: minmax(45px, 84px) minmax(123px, 158px);
-    grid-column-gap: 9px;
+    grid-template-columns: minmax(41px, 61px) minmax(103px, 148px);
+    grid-gap: 5px;
   }
 
   .header .nav .logo-wrapper .logo {
-    max-width: 45px;
+    max-width: 40px;
   }
 
   .header .nav__wrapper {
-    grid-template-rows: 80px;
-    grid-template-columns: minmax(28px, 188px) minmax(80px, 150px) minmax(80px, 485px) minmax(10px, 15px) minmax(10px, 70px) minmax(10px, 20px) minmax(15px, 160px);
+    grid-template-columns: repeat(12, minmax(49px, 1fr));
+    grid-template-areas: 'logo logo raiting raiting search search search search login  login basket basket' 'promotions about events payment payment my-order my-order purchases blog master-classes master-classes contacts' '3d-printers 3d-scanners machine-tools robots education dentists gadgets materials po solutions educational-center services';
+    grid-template-rows: 80px 30px 30px;
+  }
+
+  .header .nav__wrapper .raiting {
+    padding-left: 37px;
+    justify-self: start;
   }
 
   .header .nav__wrapper .raiting__img {
     margin-top: 8px;
   }
 
+  .header .nav__wrapper .search {
+    margin-left: 34px;
+    max-width: 232px;
+  }
+
   .header .nav__wrapper .search__request-text {
     height: 35px;
+    font-size: 1.1rem;
   }
 
   .header .nav__wrapper .search .btn-find {
     height: 26px;
     width: 30px;
+    font-size: 1.1rem;
+    max-width: 62px;
   }
 
   .header .nav__wrapper .search .btn-find__img {
@@ -802,9 +1099,111 @@ body {
     font-size: 1.2rem;
   }
 
+  .header .nav__wrapper .btn-login {
+    font-size: 1.1rem;
+    margin-left: 24px;
+    padding-right: 21px;
+    max-width: 30px;
+  }
+
+  .header .nav__wrapper .btn-basket {
+    padding: 0 7px 1px 5px;
+    max-width: 114px;
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .btn-basket__img {
+    padding-right: 5px;
+  }
+
   .header .nav__wrapper .btn {
     font-size: 1.2rem;
     justify-content: space-around;
+  }
+
+  .header .nav__wrapper .promotions {
+    font-size: 1.1rem;
+    padding-left: 2px;
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .nav__menu-item {
+    font-size: 1.1rem;
+  }
+
+  .header .nav__wrapper .nav__offers-item {
+    font-size: 1.05rem;
+  }
+
+  .header .nav__wrapper .printers {
+    min-width: 65px;
+    max-width: 123px;
+    width: auto;
+    justify-self: self-start;
+  }
+
+  .header .nav__wrapper .printers img {
+    width: 8px;
+  }
+
+  .header .nav__wrapper .scanners {
+    margin-left: 9px;
+    min-width: 65px;
+  }
+
+  .header .nav__wrapper .machine-tools {
+    margin-left: 23px;
+    min-width: 44px;
+  }
+
+  .header .nav__wrapper .robots {
+    margin-left: 4px;
+    min-width: 44px;
+  }
+
+  .header .nav__wrapper .education {
+    left: -1px;
+    min-width: 63px;
+  }
+
+  .header .nav__wrapper .dentists {
+    min-width: 70px;
+    left: 9px;
+    position: relative;
+  }
+
+  .header .nav__wrapper .gadgets {
+    left: 28px;
+    max-width: 51px;
+    position: relative;
+    margin: 0;
+  }
+
+  .header .nav__wrapper .materials {
+    max-width: 71px;
+    right: -26px;
+  }
+
+  .header .nav__wrapper .po {
+    margin: 0;
+    position: relative;
+    left: 16px;
+  }
+
+  .header .nav__wrapper .solutions {
+    left: 1px;
+  }
+
+  .header .nav__wrapper .educational-center {
+    position: relative;
+    min-width: 78px;
+    left: -2px;
+  }
+
+  .header .nav__wrapper .services {
+    position: relative;
+    left: -1px;
+    max-width: 82px;
   }
 
   .header .offers__wrapper {
@@ -839,6 +1238,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  .header {
+    height: 140px;
+    overflow: hidden;
+  }
+
   .header .headline__wrapper {
     grid-template-areas: "city number time send contact icons";
     grid-template-columns: minmax(69px, 90px) minmax(70px, 79px) minmax(73px, 231px) minmax(63px, 80px) minmax(103px, 131px) minmax(44px, 98px);
@@ -853,20 +1257,154 @@ body {
   }
 
   .header .nav__wrapper {
-    grid-template-areas: 'logo . search . login . basket';
-    grid-template-columns: minmax(85px, 142px) 9px minmax(76px, 485px) 9px minmax(10px, 60px) 9px;
+    grid-template-columns: repeat(6, minmax(15px, 134px));
+    grid-template-areas: "logo . search search search search" "burger . . . login basket" ". . . . . ." "promotions about events . payment payment" "my-order purchases  blog . master-classes contacts" "printers scanners machine-tools robots education dentists" "gadgets materials po solutions educational-center services";
+    grid-template-rows: 60px 35px 7px 34px 34px 34px 34px;
+  }
+
+  .header .nav__wrapper .btn-login {
+    height: 27px;
+    padding-right: 18px;
+    padding-left: 11px;
+    margin-right: 5px;
+    margin-left: 11px;
+  }
+
+  .header .nav__wrapper .btn-basket {
+    height: 27px;
   }
 
   .header .nav__wrapper .raiting {
     display: none;
   }
 
+  .header .nav__wrapper .burger {
+    grid-area: burger;
+    height: 35px;
+    width: 37px;
+    display: block;
+  }
+
+  .header .nav__wrapper .burger .line2 {
+    top: 42%;
+  }
+
+  .header .nav__wrapper .logo-wrapper {
+    grid-template-columns: minmax(41px, 61px);
+  }
+
+  .header .nav__wrapper .logo-wrapper__description {
+    display: none;
+  }
+
+  .header .nav__wrapper .search {
+    margin-left: 0;
+    max-width: 577px;
+  }
+
   .header .nav__wrapper .search .btn-login {
     max-width: 62px;
+    margin-left: 9px;
+    padding-right: 8px;
+    padding-left: 4px;
+    height: 30px;
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .search .btn-login__img {
+    margin-right: 4px;
   }
 
   .header .nav__wrapper .search .btn-basket {
     min-width: 90px;
+    max-width: 103px;
+    height: 30px;
+  }
+
+  .header .nav__wrapper .search .btn-basket__img {
+    padding-right: 2px;
+  }
+
+  .header .nav__wrapper .about {
+    margin-left: 6px;
+  }
+
+  .header .nav__wrapper .events {
+    justify-self: end;
+    padding: 0;
+    position: relative;
+    left: 29px;
+  }
+
+  .header .nav__wrapper .payment {
+    justify-self: end;
+  }
+
+  .header .nav__wrapper .my-order {
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .purchases {
+    justify-self: start;
+    margin-left: 4px;
+  }
+
+  .header .nav__wrapper .blog {
+    justify-self: center;
+  }
+
+  .header .nav__wrapper .master-classes {
+    justify-self: center;
+  }
+
+  .header .nav__wrapper .printers {
+    position: relative;
+    left: -2px;
+    grid-area: printers;
+  }
+
+  .header .nav__wrapper .scanners {
+    grid-area: scanners;
+    margin-left: 0;
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .robots {
+    justify-self: center;
+  }
+
+  .header .nav__wrapper .education {
+    justify-self: center;
+  }
+
+  .header .nav__wrapper .dentists {
+    max-width: 90px;
+    left: 0;
+    justify-self: end;
+  }
+
+  .header .nav__wrapper .gadgets {
+    justify-self: start;
+    max-width: 71px;
+    left: 0;
+  }
+
+  .header .nav__wrapper .materials {
+    right: -2px;
+    max-width: 62px;
+  }
+
+  .header .nav__wrapper .po {
+    left: 5px;
+    justify-self: center;
+  }
+
+  .header .nav .hr {
+    top: 163px;
+  }
+
+  .menu_show {
+    height: 280px;
   }
 
   .top-3d-shop__img {
@@ -906,9 +1444,25 @@ body {
   .better-to-see .links {
     flex-direction: column;
   }
+
+  .videos-about-us__header {
+    font-size: 2.5rem;
+  }
+
+  .videos-about-us .slider__wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .videos-about-us .video {
+    width: 79%;
+  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 530px) {
+  .header {
+    height: 140px;
+  }
+
   .header .headline {
     height: 46px;
     display: flex;
@@ -923,65 +1477,201 @@ body {
   }
 
   .header .nav__wrapper {
-    grid-template-columns: 40px 9px minmax(76px, 485px) 10px minmax(10px, 60px) 10px 75px;
+    grid-template-columns: repeat(3, minmax(15px, 193px));
+    grid-template-areas: "logo search search" "burger login basket" ". . ." "promotions . printers" "about . scanners" "events . machine-tools" "payment . robots" "my-order . education" "purchases . dentists" "blog .  gadgets" "master-classes  . materials" "contacts . po" ". . solutions" ". . educational-center" ". . services";
+    grid-template-rows: 60px 30px 14px 20px 20px 20px 20px 20px  20px 20px;
+    grid-row-gap: 1px;
   }
 
-  .header .nav .logo-wrapper {
+  .header .nav__wrapper .logo-wrapper {
     grid-gap: 0;
     grid-template-columns: 40px;
     width: 40px;
   }
 
-  .header .nav .logo-wrapper .logo {
+  .header .nav__wrapper .logo-wrapper .logo {
     max-width: 40px;
   }
 
-  .header .nav .logo-wrapper__description {
+  .header .nav__wrapper .logo-wrapper__description {
     display: none;
+  }
+
+  .header .nav__wrapper .btn-login {
+    height: 27px;
+    padding-right: 0;
+    padding-left: 0px;
+    margin-right: 36px;
+    margin-left: 11px;
+  }
+
+  .header .nav__wrapper .btn-basket {
+    padding-left: 7px;
+    padding-right: 5px;
+  }
+
+  .header .nav__wrapper .promotions {
+    padding-left: 0;
+  }
+
+  .header .nav__wrapper .about {
+    margin: 0;
+  }
+
+  .header .nav__wrapper .events {
+    justify-self: start;
+    left: 0;
+  }
+
+  .header .nav__wrapper .payment {
+    justify-self: start;
+    padding: 0;
+  }
+
+  .header .nav__wrapper .purchases {
+    margin-left: 0;
+  }
+
+  .header .nav__wrapper .blog {
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .master-classes {
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .contacts {
+    justify-self: start;
+  }
+
+  .header .nav__wrapper .printers {
+    justify-self: end;
+  }
+
+  .header .nav__wrapper .scanners {
+    justify-self: end;
+  }
+
+  .header .nav__wrapper .machine-tools {
+    justify-self: end;
+    margin: 0;
+    min-width: 50px;
+  }
+
+  .header .nav__wrapper .robots {
+    justify-self: end;
+    margin: 0;
+    min-width: 48px;
+  }
+
+  .header .nav__wrapper .education {
+    justify-self: end;
+    min-width: 61px;
+    margin-right: 2px;
+  }
+
+  .header .nav__wrapper .dentists {
+    margin-right: 2px;
+  }
+
+  .header .nav__wrapper .gadgets {
+    justify-self: end;
+    margin-right: 4px;
+  }
+
+  .header .nav__wrapper .materials {
+    justify-self: end;
+    margin-right: 6px;
+  }
+
+  .header .nav__wrapper .po {
+    justify-self: end;
+    margin-right: 10px;
+  }
+
+  .header .nav__wrapper .solutions {
+    justify-self: end;
+    margin-right: 6px;
+  }
+
+  .header .nav__wrapper .educational-center {
+    justify-self: end;
+    left: 0;
+    min-width: 66px;
+    margin-right: 5px;
+  }
+
+  .header .nav__wrapper .services {
+    margin-right: 4px;
+  }
+
+  .menu_show {
+    height: 400px;
+  }
+
+  .hr {
+    display: none;
+  }
+
+  .top-3d-shop__header {
+    font-size: 2rem;
+  }
+
+  .top-3d-shop__about {
+    font-size: 1.5rem;
+  }
+
+  .top-3d-shop__description {
+    grid-template-rows: minmax(100px, auto) minmax(180px, auto) minmax(78px, auto) 53px;
+  }
+
+  .videos-about-us {
+    width: 92vw;
+  }
+
+  .videos-about-us__wrapper {
+    width: 90vw;
+    grid-template-areas: 'header . arrow-wrapper' 'slider slider slider';
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .videos-about-us__wrapper .slider .video {
+    height: 82%;
   }
 }
 
-@media (max-width: 399px) {
-  .top-3d-shop__description {
-    grid-template-rows: minmax(100px, auto) minmax(180px, auto) minmax(78px, auto) 53px;
+@media (max-width: 500px) {
+  .popup-login__window,
+  .popup-resume__window {
+    width: 90%;
+    height: 272px;
+    min-width: 0px;
+  }
+
+  .popup-login__login,
+  .popup-resume__login {
+    height: 20%;
+    width: 40%;
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 400px) {
+  .videos-about-us__wrapper .slider .video {
+    height: 64%;
   }
 }
 
 @media (max-width: 350px) {
-  .header .nav__wrapper {
-    grid-template-areas: 'logo search search search' 'offers . login basket';
-    grid-template-columns: 57px 1fr 1fr 1fr;
-    grid-template-rows: 55px 43px;
-    grid-row-gap: 6px;
+  .header {
+    height: 150px;
   }
 
-  .header .nav__wrapper .btn-login {
-    justify-content: start;
-    height: 75%;
+  .header .headline__wrapper {
+    font-size: 1rem;
   }
 
-  .header .nav__wrapper .btn-login img {
-    margin-right: 10px;
-  }
-
-  .header .nav__wrapper .btn-basket {
-    height: 75%;
-  }
-
-  .header .nav__wrapper .offers {
-    display: grid;
-    grid-area: offers;
-  }
-
-  .header .nav__wrapper .offers__wrapper {
-    position: relative;
-    margin: 0;
-    grid-template-columns: 40px 1fr;
-  }
-
-  .header .nav__wrapper .offers__list {
-    position: absolute;
-    top: 60px;
-    left: 20px;
+  .menu_show {
+    height: 415px;
   }
 }

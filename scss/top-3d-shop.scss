@@ -148,8 +148,18 @@
     }
 }
 
-@media (max-width: 399px){
+@media (max-width: 530px){
     .top-3d-shop{
+        
+        &__header{
+            font-size: 2rem;
+        }
+        
+        &__about{
+            font-size: 1.5rem;
+        }
+        
+        
         &__description{
             grid-template-rows: minmax(100px, auto) minmax(180px, auto) minmax(78px, auto) 53px;
         }

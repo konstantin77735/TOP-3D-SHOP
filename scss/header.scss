@@ -88,7 +88,7 @@ $containerWidth: 90%;
 'logo logo raiting search search search search search search login basket basket'
 'promotions about events payment payment my-order my-order purchases blog master-classes master-classes contacts'
 '3d-printers 3d-scanners machine-tools robots education dentists gadgets materials po solutions educational-center services';
-            grid-template-columns: repeat(12, minmax(97px, 1fr));
+            grid-template-columns: repeat(12, minmax(66px, 1fr));
             grid-template-rows: 100px 50px 55px;
             align-items: center;
         }
@@ -155,6 +155,10 @@ $containerWidth: 90%;
                 border: 1px solid #BDBDBD;
                 box-sizing: border-box;
                 border-radius: 4px;
+                
+                &:focus{
+                    outline: none;
+                }
 
             }
 
@@ -200,6 +204,10 @@ $containerWidth: 90%;
             padding-right: 13px;
             min-width: 70%;
             justify-self: center;
+            
+            &__img{
+                margin-right: 14px;
+            }
         }
 
         .btn-basket {
@@ -283,7 +291,7 @@ $containerWidth: 90%;
         }
         
         .dentists{
-            grid-area: dentists;min-width: 99px;
+            grid-area: dentists;min-width: 101px;
         }
         
         .gadgets{
@@ -325,9 +333,174 @@ $containerWidth: 90%;
             font-size: 1.1rem;
         }
 
-        .offers .goods__img {
-            margin-left: 0px;
+        .nav{
+            &__wrapper{
+                grid-template-columns: repeat(12, minmax(66px, 1fr));
+                
+                .search{
+            margin-left: 96px;
+            
+            &__request-text{
+                font-size: 1.1rem;
+            }
         }
+        
+        .btn-find{
+            font-size: 1.1rem;
+            max-width: 62px;
+        }
+        
+        .raiting{
+            padding-left: 54px;
+            justify-self: start;
+        }
+        
+        .btn-login{
+            
+            font-size: 1.1rem;
+            margin-left: 25px;
+            padding-right: 7px;
+            max-width: 81px;
+            
+            &__img{
+                margin-right: 7px;
+            }
+        }
+        
+        .btn-basket{
+            padding: 0 7px 1px 5px;
+            max-width: 114px;
+            font-size: 1.1rem;
+            
+            
+            &__img{
+                padding-right: 5px;
+            }
+        }
+        
+        .promotions{
+            font-size: 1.1rem;
+            padding-left: 2px;
+            justify-self: start;
+        }
+        
+        .about{
+            font-size: 1.1rem;
+        }
+        
+        .events{
+            font-size: 1.1rem;
+        }
+        
+        .payment{
+            font-size: 1.1rem;
+        }
+        
+        .my-order{
+            font-size: 1.1rem;
+        }
+        
+        .purchases{
+            font-size: 1.1rem;
+        }
+        
+        .blog{
+            font-size: 1.1rem;
+        }
+        
+        .master-classes{
+            font-size: 1.1rem;
+        }
+        
+        .contacts{
+            font-size: 1.1rem;
+        }
+        
+        .printers{
+            font-size: 1.05rem;
+            min-width: 70px;
+            max-width: 123px;
+            width: auto;
+            justify-self: self-start;
+            
+            img{
+                width: 8px;
+            }
+        }
+        
+        .scanners{
+            font-size: 1.05rem;
+            margin-left: 20px;
+            min-width: 72px;
+        }
+        
+        .machine-tools{
+            font-size: 1.05rem;
+            margin-left: 43px;
+            min-width: 50px;
+        }
+        
+        .robots{
+            font-size: 1.05rem;
+            margin-left: 27px;
+            min-width: 44px;
+        }
+        
+        .education{
+            font-size: 1.05rem;
+            left: 21px;
+            min-width: 63px;
+        }
+        
+        .dentists{
+            min-width: 83px;
+            left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        
+        .gadgets{        
+            font-size: 1.05rem;
+            left: 42px;
+            max-width: 58px;
+            position: relative;
+            margin: 0;
+        }
+        
+        .materials{          
+            font-size: 1.05rem;
+            max-width: 71px;
+            right: -37px;
+        }
+        
+        .po{ 
+            font-size: 1.05rem;
+            margin: 0;
+            position: relative;
+            left: 20px;
+        }
+        
+        .solutions{
+            font-size: 1.05rem;
+            left: 1px;
+        }
+        
+        .educational-center{
+            position: relative;
+            min-width: 88px;
+            left: 9px;
+            font-size: 1.05rem;
+        }
+        
+        .services{
+            font-size: 1.05rem;
+            position: relative;
+            left: 0px;
+        }
+            }
+        }
+        
+        
     }
 }
 
@@ -348,34 +521,48 @@ $containerWidth: 90%;
         .nav {
             .logo-wrapper {
                 grid-template-rows: 80px;
-                grid-template-columns: minmax(45px, 84px) minmax(123px, 158px);
-                grid-column-gap: 9px;
+                grid-template-columns: minmax(41px, 61px) minmax(103px, 148px);
+                grid-gap: 5px;
 
                 .logo {
-                    max-width: 45px;
+                    max-width: 40px;
                 }
             }
 
-            &__wrapper {
-                grid-template-rows: 80px;
-                grid-template-columns: minmax(28px, 188px) minmax(80px, 150px) minmax(80px, 485px) minmax(10px, 15px) minmax(10px, 70px) minmax(10px, 20px) minmax(15px, 160px);
+            &__wrapper {        
+                grid-template-columns: repeat(12, minmax(49px, 1fr));
+                grid-template-areas:
+'logo logo raiting raiting search search search search login  login basket basket'
+'promotions about events payment payment my-order my-order purchases blog master-classes master-classes contacts'
+'3d-printers 3d-scanners machine-tools robots education dentists gadgets materials po solutions educational-center services';
+                grid-template-rows: 80px 30px 30px;
 
                 .raiting {
+                    padding-left: 37px;
+                    justify-self: start;
+                    
                     &__img {
                         margin-top: 8px;
                     }
                 }
 
                 .search {
-
+                    margin-left: 34px;
+                    max-width: 232px;
+                    
+                    
                     &__request-text {
                         height: 35px;
+                        font-size: 1.1rem;
                     }
 
                     .btn-find {
                         height: 26px;
                         width: 30px;
 
+                        font-size: 1.1rem;
+                        max-width: 62px;
+                        
                         &__img {
                             display: block;
                         }
@@ -391,13 +578,113 @@ $containerWidth: 90%;
                     }
                 }
 
-
+                .btn-login{
+                    font-size: 1.1rem;
+                    margin-left: 24px;
+                    padding-right: 21px;
+                    max-width: 30px;
+                }
+                
+                .btn-basket{
+                    padding: 0 7px 1px 5px;
+                    max-width: 114px;
+                    font-size: 1.1rem;
+                    
+                    &__img{
+                        padding-right: 5px;
+                    }
+                }
 
                 .btn {
                     font-size: 1.2rem;
                     justify-content: space-around;
                 }
-
+                
+                .promotions{
+                    font-size: 1.1rem;
+                    padding-left: 2px;
+                    justify-self: start;
+                }
+                
+                .nav__menu-item{
+                    font-size: 1.1rem;
+                }
+                
+                .nav__offers-item{
+                    font-size: 1.05rem;
+                }
+                
+                .printers{
+                    min-width: 65px;
+                    max-width: 123px;
+                    width: auto;
+                    justify-self: self-start;
+                    
+                    img{
+                        width: 8px;
+                    }
+                }
+                
+                .scanners{
+                    margin-left: 9px;
+                    min-width: 65px;
+                }
+                
+                .machine-tools{
+                    margin-left: 23px;
+                    min-width: 44px;
+                }
+                
+                .robots{
+                    margin-left: 4px;
+                    min-width: 44px;
+                }
+                
+                .education{
+                    left: -1px;
+                    min-width: 63px;
+                }
+                
+                .dentists{
+                    min-width: 70px;
+                    left: 9px;
+                    position: relative;
+                }
+                
+                .gadgets{
+                    left: 28px;
+                    max-width: 51px;
+                    position: relative;
+                    margin: 0;
+                }
+                
+                .materials{
+                    max-width: 71px;
+                    right: -26px;
+                }
+                
+                .po{
+                    margin: 0;
+                    position: relative;
+                    left: 16px;
+                }
+                
+                .solutions{
+                    left: 1px;
+                }
+                
+                .educational-center{
+                    position: relative;
+                    min-width: 78px;
+                    left: -2px;
+                }
+                
+                .services{
+                    position: relative;
+                    left: -1px;
+                    max-width: 82px;
+                }
+                
             }
         }
 
@@ -441,6 +728,9 @@ $containerWidth: 90%;
 
 @media (max-width: 768px) {
     .header {
+        height: 140px;
+        overflow: hidden;
+        
         .headline {
             &__wrapper {
                 grid-template-areas: "city number time send contact icons";
@@ -460,31 +750,176 @@ $containerWidth: 90%;
         .nav {
 
             &__wrapper {
-                grid-template-areas: 'logo . search . login . basket';
-                grid-template-columns: minmax(85px, 142px) 9px minmax(76px, 485px) 9px minmax(10px, 60px) 9px;
-
+                grid-template-columns: repeat(6, minmax(15px, 134px));
+            grid-template-areas:
+                "logo . search search search search"
+                "burger . . . login basket"
+                ". . . . . ."
+                "promotions about events . payment payment"
+                "my-order purchases  blog . master-classes contacts"
+                "printers scanners machine-tools robots education dentists"
+                "gadgets materials po solutions educational-center services";
+            grid-template-rows: 60px 35px 7px 34px 34px 34px 34px;
+                
+                .btn-login{
+                    height: 27px;
+                    padding-right: 18px;
+                    padding-left: 11px;
+                    margin-right: 5px;
+                    margin-left: 11px;
+                }
+                
+                .btn-basket{
+                    height: 27px;
+                }
+                
                 .raiting {
                     display: none;
                 }
+                
+                .burger{
+                    grid-area: burger;
+                    height: 35px;
+                    width: 37px;
+                    display: block;
+                    
+                    .line2{
+                        top: 42%;
+                    }
+                }
+                
+                .logo-wrapper{
+                    grid-template-columns: minmax(41px, 61px);
+                    
+                    &__description{
+                        display: none;
+                    }
+                }
 
                 .search {
+                    margin-left: 0;
+                    max-width: 577px;
+                    
                     .btn-login {
                         max-width: 62px;
+                        margin-left: 9px;
+                        padding-right: 8px;
+                        padding-left: 4px;
+                        height: 30px;
+                        justify-self: start;
+                        
+                        &__img{
+                            margin-right: 4px;
+                        }
                     }
 
                     .btn-basket {
                         min-width: 90px;
+                        max-width: 103px;
+                        height: 30px;
+                        
+                        &__img{
+                            padding-right: 2px;
+                        }
                     }
+                    
+                    
+                    
+                }
+                
+                .about{
+                        margin-left: 6px;
+                    }
+                    
+                .events{
+                        justify-self: end;
+                        padding: 0;
+                        position: relative;
+                        left: 29px;
+                    }
+                    
+                .payment{
+                    justify-self: end;
+                }
+                 
+                .my-order{
+                    justify-self: start;
+                }
+                    
+                .purchases{
+                    justify-self: start;
+                    margin-left: 4px;
+                }
+                    
+                .blog{
+                    justify-self: center;
+                }
+                    
+                .master-classes{
+                     justify-self: center;
+                }
+                    
+                .printers{
+                     position: relative;
+                     left: -2px;
+                     grid-area: printers;
+                }
+                    
+                .scanners{
+                    grid-area: scanners;
+                     margin-left: 0;
+                     justify-self: start;
+                }
+                    
+                .robots{
+                     justify-self: center;
+                }
+                    
+                .education{
+                    justify-self: center;
+                }
+                    
+                .dentists{
+                    max-width: 90px;
+                    left: 0;
+                    justify-self: end;
+                }
+                    
+                .gadgets{
+                    justify-self: start;
+                    max-width: 71px;
+                    left: 0;
+                }
+                    
+                .materials{
+                    right: -2px;
+                    max-width: 62px;
+                }
+                    
+                .po{
+                    left: 5px;
+                    justify-self: center;
                 }
             }
+            
+            .hr{
+                top: 163px;
+            }
+            
         }
+    }
+    
+    .menu_show{
+        height: 280px;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 530px) {
     $logoWidth: 40px;
-
-    .header {
+    
+    .header{
+        height: 140px;
+        
         .headline {
             height: 46px;
             display: flex;
@@ -492,86 +927,192 @@ $containerWidth: 90%;
             align-items: center;
 
             &__wrapper {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-areas:
-                    "city send time"
-                    "number contact icons";
-                justify-items: start;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-areas:
+                        "city send time"
+                        "number contact icons";
+                    justify-items: start;
             }
         }
-
-        .nav {
-            &__wrapper {
-                grid-template-columns: $logoWidth 9px minmax(76px, 485px) 10px minmax(10px, 60px) 10px 75px;
-            }
-
-            .logo-wrapper {
-                grid-gap: 0;
-                grid-template-columns: $logoWidth;
-                width: $logoWidth;
+        
+        .nav{
+            
+            &__wrapper{
+                grid-template-columns: repeat(3, minmax(15px, 193px));
+                grid-template-areas:
+                    "logo search search"
+                    "burger login basket"
+                    ". . ."
+                    "promotions . printers"
+                    "about . scanners"
+                    "events . machine-tools"
+                    "payment . robots"
+                    "my-order . education"
+                    "purchases . dentists"
+                    "blog .  gadgets"
+                    "master-classes  . materials"
+                    "contacts . po"
+                    ". . solutions"
+                    ". . educational-center"
+                    ". . services";
+                grid-template-rows: 60px 30px 14px 20px 20px 20px 20px 20px  20px 20px;
+                grid-row-gap: 1px;
+                
+                
+                .logo-wrapper {
+                    grid-gap: 0;
+                    grid-template-columns: $logoWidth;
+                    width: $logoWidth;
 
                 .logo {
-                    max-width: $logoWidth;
-                }
+                        max-width: $logoWidth;
+                    }
 
                 &__description {
-                    display: none;
+                        display: none;
+                    }
+                }
+                
+                .btn-login{
+                    height: 27px;
+                    padding-right: 0;
+                    padding-left: 0px;
+                    margin-right: 36px;
+                    margin-left: 11px;
+                }
+                
+                .btn-basket{
+                    padding-left: 7px;
+                    padding-right: 5px;
+                }
+                
+                .promotions{
+                    padding-left: 0;
+                }
+                
+                .about{
+                    margin: 0;
+                }
+                
+                .events{
+                    justify-self: start;
+                    left: 0;
+                }
+                
+                .payment{
+                    justify-self: start;
+                    padding: 0;
+                }
+                
+                .purchases{
+                    margin-left: 0;
+                }
+                
+                .blog{
+                    justify-self: start;
+                }
+                
+                .master-classes{
+                    justify-self: start;
+                }
+                
+                .contacts{
+                    justify-self: start;
+                }
+                
+                
+                .printers{
+                    justify-self: end;
+                }
+                
+                .scanners{
+                    justify-self: end;
+                }
+                
+                .machine-tools{
+                    justify-self: end;
+                    margin: 0;
+                    min-width: 50px;
+                }
+                
+                .robots{
+                    justify-self: end;
+                    margin: 0;
+                    min-width: 48px;
+                }
+                
+                .education{
+                    justify-self: end;
+                    min-width: 61px;
+                    margin-right: 2px;
+                }
+                
+                .dentists{
+                    margin-right: 2px;
+                }
+                
+                .gadgets{
+                    justify-self: end;
+                    margin-right: 4px;
+                }
+                
+                .materials{
+                    justify-self: end;
+                    margin-right: 6px;
+                }
+                
+                .po{
+                    justify-self: end;
+                    margin-right: 10px;
+                }
+                
+                .solutions{
+                    justify-self: end;
+                    margin-right: 6px;
+                }
+                
+                .educational-center{
+                    justify-self: end;
+                    left: 0;
+                    min-width: 66px;
+                    margin-right: 5px;
+                }
+                
+                .services{
+                    margin-right: 4px;
                 }
             }
         }
+    
+        
+    }
+    
+    .menu_show{
+            height: 400px; 
+        }
+    
+    .hr{
+        display: none;
     }
 }
 
 @media (max-width: 350px) {
     .header {
-        .nav {
-            &__wrapper {
-                grid-template-areas:
-                    'logo search search search'
-                    'offers . login basket';
-                grid-template-columns: 57px 1fr 1fr 1fr;
-                grid-template-rows: 55px 43px;
-                grid-row-gap: 6px;
-
-                .btn-login {
-                    justify-content: start;
-                    height: 75%;
-
-                    & img {
-                        margin-right: 10px;
-                    }
-                }
-
-                .btn-basket {
-                    height: 75%;
-                }
-
-                .offers {
-                    display: grid;
-                    grid-area: offers;
-
-                    &__wrapper {
-                        position: relative;
-                        margin: 0;
-                        grid-template-columns: 40px 1fr;
-                    }
-
-                    &__list {
-                        position: absolute;
-                        top: 60px;
-                        left: 20px;
-                    }
-                }
+        height: 150px;
+        
+        .headline{
+            &__wrapper{
+                font-size: 1rem;
             }
         }
     }
+    
+    .menu_show{
+        height: 415px;
+    }
 }
 
-.header .offers .offers__wrapper .menu_show {
-    display: grid;
-}
-
-.services__item {
+.nav__menu-item {
     font-family: Open Sans;
     font-size: 1.3rem;
     line-height: 1.8rem;

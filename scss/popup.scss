@@ -1,0 +1,117 @@
+
+.popup-login, .popup-resume {
+    
+    overflow: hidden;
+    position: absolute; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0; 
+    height: 100vh;
+    opacity: 0;
+    z-index: 9;
+    
+    &__overlay{
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.75);
+        height: 1000000%;
+        width: 1000000%;
+    }
+    
+    &__window{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 440px;
+        height: 300px;
+        background: #fff;
+    }
+    
+    &__content-wrapper{
+        height: 67%;
+        width: 90%;
+        font-size: 1.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    &__header{
+        font-size: 2.5rem;
+        margin: 10px 0px;
+    }
+    
+    &__paragraph{
+        margin: 30px 0 0 0;
+    }
+
+    &__input-name{
+        width: 60%;
+        max-width: 230px;
+        border: none;
+        border-bottom: 2px solid grey;
+        
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    &__login{
+        height: 20%;
+        width: 25%;
+    }
+}
+
+.popup-login__close, .popup-resume__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    fill: #888;
+    -webkit-transition: fill .3s linear;
+    -o-transition: fill .3s linear;
+    transition: fill .3s linear;
+    cursor: pointer;
+}
+
+.popup-login__close, .popup-resume__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    fill: #888;
+    -webkit-transition: fill .3s linear;
+    -o-transition: fill .3s linear;
+    transition: fill .3s linear;
+    cursor: pointer;
+    
+    &:hover{
+        fill: #a00;
+    }
+}
+
+@media (max-width: 500px){
+    .popup-login, .popup-resume{
+        
+        &__window{
+            width: 90%;
+            height: 272px;
+            min-width: 0px;
+        }
+        
+        &__login{
+            height: 20%;
+            width: 40%;
+            max-width: 140px;
+        }
+    }
+}
