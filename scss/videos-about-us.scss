@@ -55,6 +55,9 @@
         grid-area: slider;
         display: flex;
         justify-content: space-between;
+        /* justify-content: flex-start; */
+        width: 97%;
+        overflow: hidden;
 
         &__arrow-wrapper {
             grid-area: arrow-wrapper;
@@ -81,13 +84,15 @@
             width: 30px;
         }
 
-    }
-
-    .video {
+        &__item{
         width: 75%;
         height: 100%;
         margin: auto;
+        justify-self: center;
+        }
+    
     }
+
 }
 
 .arrow-next {

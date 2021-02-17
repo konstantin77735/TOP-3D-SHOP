@@ -7,10 +7,11 @@
     <link rel="shortcut icon" type="image/png" href="" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <script src="js/sliderDev.js"></script>
+    <script src="js/sliderClass.js"></script>
     <script src="js/sliderInit.js"></script>
 
-    <script src="js/popup.js"></script>
+    <script src="js/popupClass.js"></script>
+    <script src="js/popupInit.js"></script>
 
     <!--  <script src="js/bundle.js"></script> -->
 
@@ -51,7 +52,7 @@
                     <span class="logo-wrapper__description">Ваш эксперт <br> на рынке <span class="color_red">3D</span>-техники</span>
                 </div>
                 <a class="raiting" href="#">
-                    <img src="img/header/raiting.jpg" alt="yandex-raiting" class="raiting__img">
+                    <img src="img/header/raiting.svg" alt="yandex-raiting" class="raiting__img">
                 </a>
                 <div class="search">
                     <input type="text" class="search__request-text" placeholder="Введите запрос, например, Formlabs Form 2">
@@ -144,9 +145,7 @@
                 </svg>
 
             </a>
-            <a href="#" class="better-to-see__link" style="
-    margin-right: 20px;
-">
+            <a href="#" class="better-to-see__link">
 
                 Читай о нас на 3D Today
                 <svg class="better-to-see__arrow" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -159,33 +158,25 @@
 
 
     <section class="videos-about-us">
-        <div class="videos-about-us__wrapper" style="
-
-">
-            <h2 class="videos-about-us__header" style="
-    justify-self: end;
-">Видео о нас</h2>
+        <div class="videos-about-us__wrapper">
+            <h2 class="videos-about-us__header">Видео о нас</h2>
 
             <div class="slider" style="
-    justify-content: flex-start;
-    width: 97%;
-    overflow: hidden;
+    
 ">
                 <div class="slider__wrapper">
                     <!-- display: grid; transition: none 0s ease 0s; min-width: 400%; grid-template-columns: repeat(4, 672px); grid-template-rows: 293px; transform: translateX(0px); -->
 
-                    <iframe class="slider__item video" src="https://www.youtube.com/embed/OYFOWAL1NlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="
-    justify-self: center;">
+                    <iframe class="slider__item video" src="https://www.youtube.com/embed/OYFOWAL1NlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
                     </iframe>
 
-                    <iframe class="slider__item video" src="https://www.youtube.com/embed/SOYBsly_yN8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="justify-self: center;">
+                    <iframe class="slider__item video" src="https://www.youtube.com/embed/SOYBsly_yN8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
                     </iframe>
 
-                    <iframe class="slider__item video" src="https://www.youtube.com/embed/PCVlgLS9cfE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="justify-self: center;">
+                    <iframe class="slider__item video" src="https://www.youtube.com/embed/PCVlgLS9cfE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
                     </iframe>
 
-                    <iframe class="slider__item video" src="https://www.youtube.com/embed/EVyLTHevw4E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="justify-self: center;">
-
+                    <iframe class="slider__item video" src="https://www.youtube.com/embed/EVyLTHevw4E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
                     </iframe>
 
 
@@ -216,6 +207,24 @@
         </div>
     </div>
     
+    <div class="popup-basket">
+        <div class="popup-basket__overlay" style="height: inherit; display: block;"></div>
+        <div class="popup-basket__window">
+            <picture class="close-image">
+                <svg class="popup-basket__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 365.71733 365">
+                    <g>
+                        <path d="m356.339844 296.347656-286.613282-286.613281c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503906-12.5 32.769532 0 45.25l286.613281 286.613282c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082032c12.523438-12.480468 12.523438-32.75.019532-45.25zm0 0"></path>
+                        <path d="m295.988281 9.734375-286.613281 286.613281c-12.5 12.5-12.5 32.769532 0 45.25l15.082031 15.082032c12.503907 12.5 32.769531 12.5 45.25 0l286.632813-286.59375c12.503906-12.5 12.503906-32.765626 0-45.246094l-15.082032-15.082032c-12.5-12.523437-32.765624-12.523437-45.269531-.023437zm0 0"></path>
+                    </g>
+                </svg>
+            </picture>
+            <div class="popup-basket__content-wrapper">
+    <span>В корзине 0 товаров</span>
+</div> 
+
+        </div>
+    </div>
+    
     <div class="popup-resume">
         <div class="popup-resume__overlay"></div>
         <div class="popup-resume__window">
@@ -227,22 +236,18 @@
                     </g>
                 </svg>
             </picture>
-            <div class="popup-resume__content-wrapper" style="
-    justify-content: space-between;
-    height: 70%;
-">
+            <div class="popup-resume__content-wrapper">
    <input class="popup-resume__input-name" type="text" placeholder="Имя">
    <input class="popup-resume__input-name" type="text" placeholder="Фамилия">
    <input class="popup-resume__input-name" type="text" placeholder="Образование">
    <input class="popup-resume__input-name" type="text" placeholder="Опыт работы">
-    <button class="popup-resume__send-resume btn" style="
-    height: 20%;
-    width: 35%;
-    min-width: 123px;">Отправить резюме</button>    
+    <button class="popup-resume__send-resume btn">Отправить резюме</button>    
         </div>
     </div>
 </div>
 
+   
+   
     <script src="js/script.js"></script>
 </body>
 
