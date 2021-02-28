@@ -6,6 +6,7 @@ $containerWidth: 90%;
     height: 239px;
     width: 96%;
     margin: 10px auto 0;
+    /* font-family: Open Sans; */
 
     .headline {
         background: #FED600;
@@ -21,7 +22,7 @@ $containerWidth: 90%;
             justify-items: center;
             align-items: center;
             
-            font-family: Open Sans;
+            /* font-family: Open Sans; */
             font-style: normal;
             font-weight: 600;
             
@@ -67,7 +68,7 @@ $containerWidth: 90%;
     }
 
     .nav {
-        font-family: Open Sans;
+        /* font-family: Open Sans; */
         font-style: normal;
         font-weight: 600;
         font-size: 1.3rem;
@@ -99,7 +100,7 @@ $containerWidth: 90%;
             display: grid;
             width: 63px;
             grid-template-columns: minmax(64px, 85px) minmax(140px, 158px);
-            font-family: Open Sans;
+            /* font-family: Open Sans; */
             font-style: italic;
             font-weight: normal;
             align-items: center;
@@ -169,7 +170,7 @@ $containerWidth: 90%;
                 background: #fff;
                 box-sizing: border-box;
                 border-radius: 4px;
-                font-family: Open Sans;
+                /* font-family: Open Sans; */
                 font-style: normal;
                 font-weight: 600;
                 line-height: 18px;
@@ -1113,7 +1114,7 @@ $containerWidth: 90%;
 }
 
 .nav__menu-item {
-    font-family: Open Sans;
+    /* font-family: Open Sans; */
     font-size: 1.3rem;
     line-height: 1.8rem;
     font-style: normal;

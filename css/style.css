@@ -1,8 +1,17 @@
+/*
+@font-face{
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Regular.ttf") format("opentype");
+}
+
+*/
+
 .header {
   box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.16);
   height: 239px;
   width: 96%;
   margin: 10px auto 0;
+  /* font-family: Open Sans; */
 }
 
 .header .headline {
@@ -18,7 +27,7 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  font-family: Open Sans;
+  /* font-family: Open Sans; */
   font-style: normal;
   font-weight: 600;
   grid-template-areas: "city number time . send contact icons";
@@ -55,7 +64,7 @@
 }
 
 .header .nav {
-  font-family: Open Sans;
+  /* font-family: Open Sans; */
   font-style: normal;
   font-weight: 600;
   font-size: 1.3rem;
@@ -81,7 +90,7 @@
   display: grid;
   width: 63px;
   grid-template-columns: minmax(64px, 85px) minmax(140px, 158px);
-  font-family: Open Sans;
+  /* font-family: Open Sans; */
   font-style: italic;
   font-weight: normal;
   align-items: center;
@@ -148,7 +157,7 @@
   background: #fff;
   box-sizing: border-box;
   border-radius: 4px;
-  font-family: Open Sans;
+  /* font-family: Open Sans; */
   font-style: normal;
   font-weight: 600;
   line-height: 18px;
@@ -342,7 +351,7 @@
 }
 
 .nav__menu-item {
-  font-family: Open Sans;
+  /* font-family: Open Sans; */
   font-size: 1.3rem;
   line-height: 1.8rem;
   font-style: normal;
@@ -729,12 +738,18 @@
   min-width: 123px;
 }
 
+@font-face {
+  font-family: SF-Pro-Text;
+  src: url("SF-Pro-Text-Medium.ttf");
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   font-size: 10px;
   height: 100%;
+  font-family: SF-Pro-Text;
 }
 
 .color_red {
